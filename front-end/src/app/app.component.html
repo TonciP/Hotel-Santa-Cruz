@@ -1,13 +1,9 @@
-<mat-sidenav-container class="example-container"  >
-  <mat-sidenav mode="side" opened style="background: aliceblue" *ngIf="shouldRun">Sidenav content</mat-sidenav>
-  <mat-sidenav-content >
-    <mat-toolbar>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="shouldRun = !shouldRun">
-        <mat-icon>menu</mat-icon>
-      </button>
-    </mat-toolbar>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<mat-grid-list cols="2" rowHeight="2:1">
+  <app-slider-nav>
 
-<div *ngIf="!shouldRun">Please open on Stackblitz to see result</div>
+  </app-slider-nav>
+  <p>
+    mi otra pantalla
+  </p>
 
+</mat-grid-list>

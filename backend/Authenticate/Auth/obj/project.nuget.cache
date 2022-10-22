@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CGv1IS1OmEqPwUluimHvAhRZIBEBCFreoqsKlpXTkgB6UZ3r81ZF4SO2vaNEN0W2IcF1waABuAIvJfC7s7Lv1A==",
+  "dgSpecHash": "sNBHBchSSGG/rE8OTX2i86HhmC2cy5pwMeEqMTBKrPccAJqs72+rAFDsTpYXBn5pKwM2CU4Tec3Kts2//vk4Dg==",
   "success": true,
-  "projectFilePath": "D:\\UNIVERSIDAD_SEMESTRES\\Ingeneer-2022-2\\Taller-Ingenieria-Web\\Proyecto\\Develop\\Hotel-Santa-Cruz\\Authenticate\\Auth\\Auth.csproj",
+  "projectFilePath": "D:\\UNIVERSIDAD_SEMESTRES\\Ingeneer-2022-2\\Taller-Ingenieria-Web\\Proyecto\\Develop\\Hotel-Santa-Cruz\\backend\\Authenticate\\Auth\\Auth.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tonci\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\tonci\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

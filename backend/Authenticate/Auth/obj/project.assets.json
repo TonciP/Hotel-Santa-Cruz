@@ -230,11 +230,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\UNIVERSIDAD_SEMESTRES\\Ingeneer-2022-2\\Taller-Ingenieria-Web\\Proyecto\\Develop\\Hotel-Santa-Cruz\\Authenticate\\Auth\\Auth.csproj",
+      "projectUniqueName": "D:\\UNIVERSIDAD_SEMESTRES\\Ingeneer-2022-2\\Taller-Ingenieria-Web\\Proyecto\\Develop\\Hotel-Santa-Cruz\\backend\\Authenticate\\Auth\\Auth.csproj",
       "projectName": "Auth",
-      "projectPath": "D:\\UNIVERSIDAD_SEMESTRES\\Ingeneer-2022-2\\Taller-Ingenieria-Web\\Proyecto\\Develop\\Hotel-Santa-Cruz\\Authenticate\\Auth\\Auth.csproj",
+      "projectPath": "D:\\UNIVERSIDAD_SEMESTRES\\Ingeneer-2022-2\\Taller-Ingenieria-Web\\Proyecto\\Develop\\Hotel-Santa-Cruz\\backend\\Authenticate\\Auth\\Auth.csproj",
       "packagesPath": "C:\\Users\\tonci\\.nuget\\packages\\",
-      "outputPath": "D:\\UNIVERSIDAD_SEMESTRES\\Ingeneer-2022-2\\Taller-Ingenieria-Web\\Proyecto\\Develop\\Hotel-Santa-Cruz\\Authenticate\\Auth\\obj\\",
+      "outputPath": "D:\\UNIVERSIDAD_SEMESTRES\\Ingeneer-2022-2\\Taller-Ingenieria-Web\\Proyecto\\Develop\\Hotel-Santa-Cruz\\backend\\Authenticate\\Auth\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
