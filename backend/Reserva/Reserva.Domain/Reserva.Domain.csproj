@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Event\" />
+    <Folder Include="Factories\" />
+    <Folder Include="Model\Habitacion\" />
+    <Folder Include="Model\Card\" />
+    <Folder Include="Model\ValueObjects\" />
+    <Folder Include="Model\Tracking\" />
+    <Folder Include="ValueObjects\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+</Project>
