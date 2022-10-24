@@ -3,4 +3,11 @@
   left: 0;
   bottom: 0;
   position: fixed;
+  color: red;
 }
+h1{
+  background-color: red;
+  font-family: 'Open Sans';
+  text-align: center;
+}
+
