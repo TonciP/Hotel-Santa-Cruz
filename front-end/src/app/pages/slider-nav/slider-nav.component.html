@@ -2,16 +2,19 @@
 
 
 <mat-sidenav-container class="example-container"  >
-  <mat-sidenav mode="side" opened style="background: aliceblue" *ngIf="shouldRun == true">navegador</mat-sidenav>
+  <mat-sidenav mode="side" opened style="background: aliceblue" *ngIf="shouldRun == true">SERVICIOS</mat-sidenav>
 
   <mat-sidenav-content >
-    <div>
-      <h1>HOTEL NUEVA SANTA CRUZ</h1>
-    </div>
+    
     <mat-toolbar>
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="shouldRun = !shouldRun">
         <mat-icon>menu</mat-icon>
       </button>
+      <div class="menu">
+        <h1>HOTEL NUEVA SANTA CRUZ</h1>
+        <h2>OFERTAS</h2>
+        <h2>MIS RESERVAS</h2>
+      </div>
     </mat-toolbar>
   </mat-sidenav-content>
 </mat-sidenav-container>
