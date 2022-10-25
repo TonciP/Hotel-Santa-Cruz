@@ -6,7 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./slider-nav.component.css']
 })
 export class SliderNavComponent implements OnInit {
-  @Input() shouldRun = true;
+  @Input() shouldRun = false;
   //@Input('boolean-attribute') shouldRun = true;
 
   constructor() { }

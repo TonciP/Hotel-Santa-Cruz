@@ -1,3 +1,4 @@
+/*elementos en bloque*/
 .mat-sidenav{
   top: 0 ;
   left: 0;
@@ -6,23 +7,26 @@
   font-family: 'Open Sans';
   font-weight: 700;
   font-style: normal;
-  margin: 15PX;
   padding: 10px;
-  
+
 
 }
 
 .menu{
 text-align: center;
 color: white;
-  background-color: brown;
-
+  background-color: var(--color-primary);
 }
+.mat-toolbar{
+  background-color: var(--color-primary);
+}
+
+/*elementos en especificos*/
 h1{
   float: left;
   margin-right: 800px;
   margin-left: 20px;
-  font-family: 'Open Sans';
+  font-family: var(--font-primary);
   font-weight: 700;
   font-style: normal;
 
@@ -30,8 +34,7 @@ h1{
 h2{
   float: right;
   margin-right: 100PX;
-  font-family: 'Open Sans';
+  font-family: var(--font-primary);
   font-weight: 700;
   font-style: normal;
 }
-
