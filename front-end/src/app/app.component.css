@@ -1,3 +1,8 @@
+.container{
+  background-color:darkgrey;
+  height: 100%;
+  width: 100%;
+}
 .example-container {
   position: absolute;
   top: 0;
@@ -12,10 +17,10 @@
   padding: 50px;
   background-color: gray;
   border-radius: 10px;
-  width: 800px;
+  width: 1000px;
 }
 label{
-  padding: 50px;
+  padding: 5px;
 }
 input{
   border-radius: 10px;
@@ -26,8 +31,28 @@ button{
   font-family: 'Open Sans';
   font-weight: 700;
   font-style: normal;
-  padding: 5px;
+  padding: 10px;
   background-color: brown;
   color: white;
+  margin-left: 10px;
+}
+label{
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-style: normal;
+}
+.habitaciones{
+  background-color: gray;
+  border-radius: 10px;
+  height: 500px;
+  width: 1100px;
+  margin-left: 200px;
+  margin-top: 50px;
   
 }
+img{
+  width: 300px;
+  height: 200px;
+}
+
+

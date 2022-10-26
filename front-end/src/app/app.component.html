@@ -1,20 +1,27 @@
-<div>
+<div class="container">
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <app-slider-nav>
+    </app-slider-nav>
 
-</div>
-<mat-grid-list cols="2" rowHeight="2:1">
-  <app-slider-nav>
-  </app-slider-nav>
-  <div class="formulario">
-  <form  action="">
-    <label for="">
-      <input type="text" >
-    </label>
-    <label for="">
-      <input type="text" >
-    </label>
-    <button type="submit">Buscar</button>
-  </form>
-</div>
-  
 
-</mat-grid-list>
+    <div class="formulario">
+      <form action="">
+        <label for="fecha_entrada">Fecha Entrada</label>
+        <input type="text" name="fecha_entrada">
+        <label for="fecha_salida">Fecha Salida</label>
+        <input type="text" name="fecha_salida">
+        <label for="cant_personas">Cantidad Personas</label>
+        <input type="text" name="cant_personas">
+        <button type="submit">Buscar</button>
+      </form>
+    </div>
+
+    <div class="habitaciones">
+      <label class="suite_doble" for="suite_doble">Suite Doble</label>
+      <img src="https://www.emprendedores.es/wp-content/uploads/2021/12/iStock-907621754-e1639556826504-1024x576.jpg"
+        alt="habitacion_suite">
+    </div>
+
+
+  </mat-grid-list>
+</div>
