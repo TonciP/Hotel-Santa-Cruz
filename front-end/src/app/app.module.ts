@@ -10,11 +10,14 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { SliderNavComponent } from './pages/slider-nav/slider-nav.component';
 import {MatGridListModule} from "@angular/material/grid-list";
+import {RouterModule, Routes} from "@angular/router";
+
+const routes: Routes = [{path: '', component: SliderNavComponent }];
 
 @NgModule({
   declarations: [
     AppComponent,
-    SliderNavComponent
+    SliderNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,9 @@ import {MatGridListModule} from "@angular/material/grid-list";
     MatSidenavModule,
     BrowserAnimationsModule,
     MatGridListModule,
+    RouterModule.forRoot(routes)
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

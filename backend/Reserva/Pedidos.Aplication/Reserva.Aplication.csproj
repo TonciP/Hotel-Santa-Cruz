@@ -26,4 +26,8 @@
     <ProjectReference Include="..\Reserva.Domain\Reserva.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UseCase\Commands\Cliente\NewFolder\" />
+  </ItemGroup>
+
 </Project>

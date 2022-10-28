@@ -3,7 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Reserva.Aplication.Utils;
+using Reserva.Domain.Repositories;
+using Reserva.Infraestructure.EF;
 using Reserva.Infraestructure.EF.Context;
+using Reserva.Infraestructure.EF.Repository;
+using ShareKernel.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +28,11 @@ namespace Reserva.Infraestructure.utils
             {
                 options.UseSqlServer(configuration.GetConnectionString("ReservaConnectionString"));
             });
+            //Scoped: se crea una instancia por cada request
+            //Transient: se crea una instancia por cada uso
+            //Singleton: se crea una instancia por cada aplicación
+            //services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IClienteRepository, ClienteRepository>();
 
             return services;
         }
