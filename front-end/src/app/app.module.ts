@@ -11,6 +11,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { SliderNavComponent } from './pages/slider-nav/slider-nav.component';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {RouterModule, Routes} from "@angular/router";
+import { FooterComponent } from './components/footer/footer.component';
 
 const routes: Routes = [{path: '', component: SliderNavComponent }];
 
@@ -18,6 +19,7 @@ const routes: Routes = [{path: '', component: SliderNavComponent }];
   declarations: [
     AppComponent,
     SliderNavComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

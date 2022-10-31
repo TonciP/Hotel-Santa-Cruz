@@ -1,0 +1,10 @@
+.container {
+  background-color: brown;
+}
+h1 {
+  color: white;
+  font-family: "Open Sans";
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+}
