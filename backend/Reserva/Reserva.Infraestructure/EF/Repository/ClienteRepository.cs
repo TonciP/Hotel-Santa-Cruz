@@ -1,5 +1,7 @@
-﻿using Reserva.Domain.Model.cliente;
+﻿using Microsoft.EntityFrameworkCore;
+using Reserva.Domain.Model.Clientes;
 using Reserva.Domain.Repositories;
+using Reserva.Infraestructure.EF.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +12,16 @@ namespace Reserva.Infraestructure.EF.Repository
 {
     internal class ClienteRepository : IClienteRepository
     {
-        //private readonly WriteDbContext _context;
+        private readonly WriteDbContext _context;
 
-        public Task CreateAsync(Cliente obj)
+        public ClienteRepository(WriteDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+
+        public async Task CreateAsync(Cliente obj)
+        {
+            await _context.Clientes.AddAsync(obj);
         }
 
         public Task<Cliente> FindByIdAsync(Guid id)

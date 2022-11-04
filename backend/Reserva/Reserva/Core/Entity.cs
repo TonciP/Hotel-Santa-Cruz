@@ -3,16 +3,17 @@ using System.Collections.Generic;
 
 namespace ShareKernel.Core
 {
-    public abstract class Entity<TId>
+    public abstract class Entity
     {
-        public TId Id { get; protected set; }
+        public Guid Id { get; protected set; }
 
         private readonly ICollection<DomainEvent> _domainEvents;
 
         public ICollection<DomainEvent> DomainEvents { get { return _domainEvents; } }
 
-        protected Entity()
+        protected Entity() : base()
         {
+            Id = Guid.NewGuid();
             _domainEvents = new List<DomainEvent>();
         }
 

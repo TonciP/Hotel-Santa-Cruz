@@ -12,7 +12,6 @@ export class SliderNavComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.shouldRun);
   }
 
 }

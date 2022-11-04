@@ -11,7 +11,7 @@ namespace Reserva.Aplication.UseCase.Queries.Cliente
     public class GetListaCliente : IRequest<IEnumerable<ClienteDto>>
     {
         public string nombreSearch { get; set; }
-        public string apellidoSearch { get; set; } 
+        public string? apellidoSearch { get; set; } 
 
     }
 }

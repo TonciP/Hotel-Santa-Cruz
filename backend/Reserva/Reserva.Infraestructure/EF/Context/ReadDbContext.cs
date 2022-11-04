@@ -22,7 +22,8 @@ namespace Reserva.Infraestructure.EF.Context
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.ApplyConfiguration<ClienteReadModel>(new ClienteReadConfig());
+            //modelBuilder.ApplyConfiguration<ClienteReadModel>(new ClienteReadConfig());
+            //modelBuilder.ApplyConfiguration<EstadiaReadModel>(new EstadiaReadConfig());
 
         }
     }

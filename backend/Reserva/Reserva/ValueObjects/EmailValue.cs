@@ -12,9 +12,10 @@ namespace ShareKernel.ValueObjects
         public EmailValue(string value)
         {
             string expresion = "«\\w+([-+.’]\\w+)*@\\w+([-.]\\w +)*\\.\\w+([-.]\\w+)*»";
-            if (value.Length > 0) // value lent no mayor a 500
+            if (value.Length < 0) // value lent no mayor a 500
                 throw new BussinessRuleValidationException("El Valor del email es vacio");
             if(Regex.IsMatch(value, expresion))
+                throw new BussinessRuleValidationException("El Valor del email no es un correo");
             Value = value;
 
         }

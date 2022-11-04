@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Repositories\IEstadiaRepository.cs" />
+    <Compile Remove="Repositories\ITrackingRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Event\" />
-    <Folder Include="Model\Habitacion\" />
-    <Folder Include="Model\Card\" />
     <Folder Include="Model\ValueObjects\" />
-    <Folder Include="Model\Tracking\" />
     <Folder Include="ValueObjects\" />
   </ItemGroup>
 
@@ -33,6 +35,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Reserva\ShareKernel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Reserva\Reserva.Domain\Model\Habitaciones\.editorconfig" />
   </ItemGroup>
 
 </Project>

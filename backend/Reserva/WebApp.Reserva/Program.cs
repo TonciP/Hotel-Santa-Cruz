@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Configuration;
+using Reserva.Infraestructure.utils;
 
 var builder = WebApplication.CreateBuilder(args);
 

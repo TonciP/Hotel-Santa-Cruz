@@ -7,6 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="UseCase\Commands\Clientes\**" />
+    <Compile Remove="UseCase\Commands\Estadias\**" />
+    <Compile Remove="UseCase\Commands\Habitaciones\**" />
+    <EmbeddedResource Remove="UseCase\Commands\Clientes\**" />
+    <EmbeddedResource Remove="UseCase\Commands\Estadias\**" />
+    <EmbeddedResource Remove="UseCase\Commands\Habitaciones\**" />
+    <None Remove="UseCase\Commands\Clientes\**" />
+    <None Remove="UseCase\Commands\Estadias\**" />
+    <None Remove="UseCase\Commands\Habitaciones\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MediatR" Version="11.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
@@ -27,7 +39,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UseCase\Commands\Cliente\NewFolder\" />
+    <Folder Include="UseCase\Queries\Habitacion\" />
+    <Folder Include="UseCase\Queries\Estadia\" />
   </ItemGroup>
 
 </Project>

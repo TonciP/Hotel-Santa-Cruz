@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Reserva.Domain.Model.Clientes;
 using Reserva.Infraestructure.EF.ReadModel;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace Reserva.Infraestructure.EF.Config.ReadConfig
 {
-    internal class ClienteReadConfig : IEntityTypeConfiguration<ClienteReadModel>
+    internal class ClienteReadConfig : IEntityTypeConfiguration<Cliente>
     {
-        public void Configure(EntityTypeBuilder<ClienteReadModel> builder)
+        public void Configure(EntityTypeBuilder<Cliente> builder)
         {
             builder.ToTable("cliente");
             builder.HasKey(x => x.Id);
@@ -36,6 +37,9 @@ namespace Reserva.Infraestructure.EF.Config.ReadConfig
             builder.Property(x => x.Telefono)
                 .HasColumnName("telefono")
                 .HasMaxLength(500);
+
+            builder.Ignore(x => x.DomainEvents);
+            builder.Ignore("_domainEvents");
         }
     }
 }

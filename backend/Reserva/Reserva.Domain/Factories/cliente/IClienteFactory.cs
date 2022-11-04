@@ -1,4 +1,5 @@
-﻿using Reserva.Domain.Model.cliente;
+﻿
+using Reserva.Domain.Model.Clientes;
 using System;
 using System.Collections.Generic;
 using System.Linq;

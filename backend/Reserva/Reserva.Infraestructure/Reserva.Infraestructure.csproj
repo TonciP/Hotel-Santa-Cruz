@@ -7,9 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="EF\Config\WriteConfig\" />
+    <Compile Remove="EF\Repository\EstadiaRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="EF\Migrations\" />
-    <Folder Include="Queries\" />
   </ItemGroup>
 
   <ItemGroup>

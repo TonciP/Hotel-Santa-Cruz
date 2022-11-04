@@ -1,0 +1,17 @@
+D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Check-Out\CheckOut.Domain\bin\Debug\net6.0\CheckOut.Domain.deps.json
+D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Check-Out\CheckOut.Domain\bin\Debug\net6.0\CheckOut.Domain.runtimeconfig.json
+D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Check-Out\CheckOut.Domain\bin\Debug\net6.0\CheckOut.Domain.dll
+D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Check-Out\CheckOut.Domain\bin\Debug\net6.0\CheckOut.Domain.pdb
+D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Check-Out\CheckOut.Domain\bin\Debug\net6.0\ShareKernel.dll
+D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Check-Out\CheckOut.Domain\bin\Debug\net6.0\ShareKernel.pdb
+D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Check-Out\CheckOut.Domain\obj\Debug\net6.0\CheckOut.Domain.csproj.AssemblyReference.cache
+D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Check-Out\CheckOut.Domain\obj\Debug\net6.0\CheckOut.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Check-Out\CheckOut.Domain\obj\Debug\net6.0\CheckOut.Domain.AssemblyInfoInputs.cache
+D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Check-Out\CheckOut.Domain\obj\Debug\net6.0\CheckOut.Domain.AssemblyInfo.cs
+D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Check-Out\CheckOut.Domain\obj\Debug\net6.0\CheckOut.Domain.csproj.CoreCompileInputs.cache
+D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Check-Out\CheckOut.Domain\obj\Debug\net6.0\CheckOut.Domain.csproj.CopyComplete
+D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Check-Out\CheckOut.Domain\obj\Debug\net6.0\CheckOut.Domain.dll
+D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Check-Out\CheckOut.Domain\obj\Debug\net6.0\refint\CheckOut.Domain.dll
+D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Check-Out\CheckOut.Domain\obj\Debug\net6.0\CheckOut.Domain.pdb
+D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Check-Out\CheckOut.Domain\obj\Debug\net6.0\CheckOut.Domain.genruntimeconfig.cache
+D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Check-Out\CheckOut.Domain\obj\Debug\net6.0\ref\CheckOut.Domain.dll
