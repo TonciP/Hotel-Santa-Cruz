@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Reserva.Domain.Model.Estadias
 {
-    public class Estadia : Entity
+    public class Estadia : AggregateRoot
     {
 
         public DateTime FechaIngreso { get;  set; }

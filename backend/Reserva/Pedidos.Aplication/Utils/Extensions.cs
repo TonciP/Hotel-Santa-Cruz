@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Reserva.Domain.Factories.cliente;
+using Reserva.Domain.Factories.reserva;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace Reserva.Aplication.Utils
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
             services.AddScoped<IClienteFactory, ClienteFactory>();
+            services.AddScoped<IReservaFactory, ReservaFactory>();
 
             return services;
         }

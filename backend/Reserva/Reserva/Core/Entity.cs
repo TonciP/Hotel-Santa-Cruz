@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShareKernel.Core
 {
@@ -7,13 +8,15 @@ namespace ShareKernel.Core
     {
         public Guid Id { get; protected set; }
 
+        
         private readonly ICollection<DomainEvent> _domainEvents;
+
 
         public ICollection<DomainEvent> DomainEvents { get { return _domainEvents; } }
 
         protected Entity() : base()
         {
-            Id = Guid.NewGuid();
+            //Id = Guid.NewGuid();
             _domainEvents = new List<DomainEvent>();
         }
 

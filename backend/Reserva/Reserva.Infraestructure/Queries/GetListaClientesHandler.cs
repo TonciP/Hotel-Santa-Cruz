@@ -27,7 +27,7 @@ namespace Reserva.Infraestructure.Queries
             var query = clientes.AsNoTracking().AsQueryable();
             if (!string.IsNullOrEmpty(request.nombreSearch))
             {
-                query = query.Where(x => x.Nombres == request.nombreSearch);
+                query = query.Where(x => x.Nombres.ToLower().Contains(request.nombreSearch.ToLower()));
             }
             var lista = await query.Select(x => new ClienteDto
             {

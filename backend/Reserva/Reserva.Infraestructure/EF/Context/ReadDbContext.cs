@@ -12,6 +12,7 @@ namespace Reserva.Infraestructure.EF.Context
     internal class ReadDbContext : DbContext
     {
         public virtual DbSet<ClienteReadModel> Clientes { get; set; }
+        //public virtual DbSet<ClienteReadModel> Clientes { get; set; }
 
         public ReadDbContext(DbContextOptions<ReadDbContext> options) : base(options)
         {
@@ -22,8 +23,8 @@ namespace Reserva.Infraestructure.EF.Context
         {
             base.OnModelCreating(modelBuilder);
 
-            //modelBuilder.ApplyConfiguration<ClienteReadModel>(new ClienteReadConfig());
-            //modelBuilder.ApplyConfiguration<EstadiaReadModel>(new EstadiaReadConfig());
+            modelBuilder.ApplyConfiguration<ClienteReadModel>(new ClienteReadConfig());
+            modelBuilder.ApplyConfiguration<EstadiaReadModel>(new EstadiaReadConfig());
 
         }
     }

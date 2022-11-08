@@ -7,14 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="UseCase\Commands\Clientes\**" />
-    <Compile Remove="UseCase\Commands\Estadias\**" />
     <Compile Remove="UseCase\Commands\Habitaciones\**" />
-    <EmbeddedResource Remove="UseCase\Commands\Clientes\**" />
-    <EmbeddedResource Remove="UseCase\Commands\Estadias\**" />
     <EmbeddedResource Remove="UseCase\Commands\Habitaciones\**" />
-    <None Remove="UseCase\Commands\Clientes\**" />
-    <None Remove="UseCase\Commands\Estadias\**" />
     <None Remove="UseCase\Commands\Habitaciones\**" />
   </ItemGroup>
 

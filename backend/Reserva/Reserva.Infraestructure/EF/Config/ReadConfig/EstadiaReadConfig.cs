@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace Reserva.Infraestructure.EF.Config.ReadConfig
 {
-    internal class EstadiaReadConfig : IEntityTypeConfiguration<Estadia>
+    internal class EstadiaReadConfig : IEntityTypeConfiguration<EstadiaReadModel>
     {
-        public void Configure(EntityTypeBuilder<Estadia> builder)
+        public void Configure(EntityTypeBuilder<EstadiaReadModel> builder)
         {
             builder.ToTable("estadia");
             builder.HasKey(x => x.Id);
@@ -25,8 +25,8 @@ namespace Reserva.Infraestructure.EF.Config.ReadConfig
             builder.Property(x => x.FechaSalida)
                 .HasColumnName("fechaSalida");
 
-            builder.Ignore(x => x.DomainEvents);
-            builder.Ignore("_domainEvents");
+            //builder.Ignore(x => x.DomainEvents);
+            //builder.Ignore("_domainEvents");
 
         }
     }

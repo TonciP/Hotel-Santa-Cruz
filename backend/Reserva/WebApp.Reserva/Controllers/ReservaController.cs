@@ -4,7 +4,9 @@ using Reserva.Aplication.UseCase.Commands.Reservars;
 
 namespace WebApp.Reserva.Controllers
 {
-    public class ReservaController : Controller
+    [Route("api/reserva")]
+    [ApiController]
+    public class ReservaController : ControllerBase
     {
         private readonly IMediator _mediator;
 
@@ -12,11 +14,16 @@ namespace WebApp.Reserva.Controllers
         {
             _mediator = mediator;
         }
-
+        [HttpPost]
         public async Task<IActionResult> CreateReserva([FromBody] CreateReservarCommand command)
         {
-
-            return Ok();
+            var result = await _mediator.Send(command);
+            return Ok(result);
         }
+
+        /*public async Task<string> Mail([FromQuery] string correo)
+        {
+
+        }*/
     }
 }

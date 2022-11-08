@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Reserva.Domain.Model.Clientes;
+using Reserva.Domain.Model.Estadias;
 using Reserva.Domain.Model.Reservas;
+using Reserva.Domain.Model.Trackings;
 using Reserva.Infraestructure.EF.Config.ReadConfig;
 using Reserva.Infraestructure.EF.Config.WriteConfig;
 using System;
@@ -14,6 +16,8 @@ namespace Reserva.Infraestructure.EF.Context
     internal class WriteDbContext : DbContext
     {
         public virtual DbSet<Cliente> Clientes { get; set; }
+        public virtual DbSet<Estadia> Estadias { get; set; }
+        public virtual DbSet<Tracking> Tracking { get; set; }
         public virtual DbSet<Reservar> Reservar { get; set; }
 
         public WriteDbContext(DbContextOptions<WriteDbContext> options) : base(options)
@@ -25,7 +29,9 @@ namespace Reserva.Infraestructure.EF.Context
         {
             base.OnModelCreating(modelBuilder);
 
-            //modelBuilder.ApplyConfiguration<Cliente>(new ClienteWriteConfig());
+            modelBuilder.ApplyConfiguration<Cliente>(new ClienteWriteConfig());
+            modelBuilder.ApplyConfiguration<Estadia>(new EstadiaWriteConfig());
+            modelBuilder.ApplyConfiguration<Tracking>(new TrackingWriteConfig());
             modelBuilder.ApplyConfiguration<Reservar>(new ReservaWriteConfig());
 
 

@@ -8,7 +8,7 @@ namespace Reserva.Aplication.Dto
 {
     public class ClienteDto
     {
-        public Guid clienteId { get; set; }
+        public Guid? clienteId { get; set; }
         public string nombres { get; set; }
         public string apellidos { get; set; }
         public string direccion { get; set; }

@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace Reserva.Infraestructure.EF.Config.ReadConfig
 {
-    internal class ClienteReadConfig : IEntityTypeConfiguration<Cliente>
+    internal class ClienteReadConfig : IEntityTypeConfiguration<ClienteReadModel>
     {
-        public void Configure(EntityTypeBuilder<Cliente> builder)
+        public void Configure(EntityTypeBuilder<ClienteReadModel> builder)
         {
             builder.ToTable("cliente");
             builder.HasKey(x => x.Id);
@@ -38,8 +38,8 @@ namespace Reserva.Infraestructure.EF.Config.ReadConfig
                 .HasColumnName("telefono")
                 .HasMaxLength(500);
 
-            builder.Ignore(x => x.DomainEvents);
-            builder.Ignore("_domainEvents");
+            //builder.Ignore(x => x.DomainEvents);
+            //builder.Ignore("_domainEvents");
         }
     }
 }

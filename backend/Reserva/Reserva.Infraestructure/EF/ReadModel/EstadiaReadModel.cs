@@ -15,16 +15,16 @@ namespace Reserva.Infraestructure.EF.ReadModel
         //[IgnoreDataMember]
         //public DateTime current_time = DateTime.Today.ToString();
 
-        [Key]
-        [Column("estadiaId")]
+        //[Key]
+        //[Column("estadiaId")]
         public Guid Id { get; set; }
 
-        [Required]
-        [Column(name: "fechaEntrada", TypeName = "Date")]
-        public DateTime FechaEntrada { get; set; }
+        //[Required]
+        //[Column(name: "fechaIngreso", TypeName = "Date")]
+        public DateTime FechaIngreso { get; set; }
 
-        [Required]
-        [Column(name: "fechaSalida" , TypeName = "Date")]
+        //[Required]
+        //[Column(name: "fechaSalida" , TypeName = "Date")]
         public DateTime FechaSalida { get; set; }
 
         public EstadiaReadModel()

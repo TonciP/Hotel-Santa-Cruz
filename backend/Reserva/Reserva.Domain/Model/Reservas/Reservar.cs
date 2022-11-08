@@ -1,5 +1,7 @@
-﻿using Reserva.Domain.Model.Clientes;
+﻿using Reserva.Domain.Event;
+using Reserva.Domain.Model.Clientes;
 using Reserva.Domain.Model.Estadias;
+using Reserva.Domain.Model.Habitaciones;
 using Reserva.Domain.Model.Trackings;
 using ShareKernel.Core;
 using System;
@@ -7,18 +9,21 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Reserva.Domain.Model.Reservas
 {
+
     public class Reservar : AggregateRoot
     {
         public Tracking _tracking { get; private set; }
         public Guid HabitacionId { get; private set; }
 
         public Estadia _estadia { get; private set; }
-        public Cliente? _cliente { get; private set; }
+        public Cliente _cliente { get; private set; }
 
         public Reservar(Tracking trackingId, Guid habitacionId, Estadia estadiaId, Cliente clienteId)
         {
@@ -31,6 +36,8 @@ namespace Reserva.Domain.Model.Reservas
             HabitacionId = habitacionId;
             _estadia = estadiaId;
             _cliente = clienteId;
+
+
 
         }
 
@@ -50,5 +57,12 @@ namespace Reserva.Domain.Model.Reservas
             _estadia = new Estadia();
             _cliente = new Cliente();
         }
+
+        public void enviarCorreo(Tracking trackingId,Cliente clienteId)
+        {
+            var evento = new MailReservaAgregado(trackingId, clienteId);
+            AddDomainEvent(evento);
+        }
+
     }
 }

@@ -19,49 +19,49 @@ namespace Reserva.Infraestructure.EF.Config.WriteConfig
 
             builder.Property(x => x.Id).HasColumnName("clienteId");
 
-            var nombreConverter = new ValueConverter<ClienteStringValue, string>(
+            /*var nombreConverter = new ValueConverter<ClienteStringValue, string>(
                 personNameValue => personNameValue.Value,
                 stringValue => new ClienteStringValue(stringValue)
-            );
+            );*/
 
             builder.Property(x => x.Nombres)
-                .HasConversion(nombreConverter)
+                //.HasConversion(nombreConverter)
                 .HasColumnName("nombres");
 
-            var apellidoConverter = new ValueConverter<ClienteStringValue, string>(
+            /*var apellidoConverter = new ValueConverter<ClienteStringValue, string>(
                 personApellidoValue => personApellidoValue.Value,
                 stringValue => new ClienteStringValue(stringValue)
-            );
+            );*/
 
             builder.Property(x => x.Apellidos)
-                .HasConversion(apellidoConverter)
+            //    .HasConversion(apellidoConverter)
                 .HasColumnName("apellidos");
 
-            var emailConverter = new ValueConverter<EmailValue, string>(
+            /*var emailConverter = new ValueConverter<EmailValue, string>(
                 emailApellidoValue => emailApellidoValue.Value,
                 stringValue => new EmailValue(stringValue)
-            );
+            );*/
 
             builder.Property(x => x.Email)
-                .HasConversion(emailConverter)
+            //    .HasConversion(emailConverter)
                 .HasColumnName("email");
 
-            var direccionConverter = new ValueConverter<ClienteStringValue, string>(
+            /*var direccionConverter = new ValueConverter<ClienteStringValue, string>(
                 direccionNameValue => direccionNameValue.Value,
                 stringValue => new ClienteStringValue(stringValue)
-            );
+            );*/
 
             builder.Property(x => x.Direccion)
-                .HasConversion(direccionConverter)
+            //    .HasConversion(direccionConverter)
                 .HasColumnName("direccion");
 
-            var telefonoConverter = new ValueConverter<TelefonoValue, string>(
+            /*var telefonoConverter = new ValueConverter<TelefonoValue, string>(
                 telefonoNameValue => telefonoNameValue.Value,
                 stringValue => new TelefonoValue(stringValue)
-            );
+            );*/
 
             builder.Property(x => x.Telefono)
-                .HasConversion(telefonoConverter)
+            //    .HasConversion(telefonoConverter)
                 .HasColumnName("telefono");
 
             builder.Ignore(x => x.DomainEvents);

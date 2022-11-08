@@ -8,10 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Ef\Config\WriteConfig\" />
-    <Folder Include="Ef\Config\ReadConfig\" />
     <Folder Include="Ef\Migrations\" />
     <Folder Include="Ef\Repository\" />
-    <Folder Include="Ef\ReadModel\" />
     <Folder Include="Queries\" />
   </ItemGroup>
 

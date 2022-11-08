@@ -21,6 +21,7 @@ namespace Reserva.Infraestructure.EF.Repository
 
         public async Task CreateAsync(Cliente obj)
         {
+            //throw new NotImplementedException();
             await _context.Clientes.AddAsync(obj);
         }
 

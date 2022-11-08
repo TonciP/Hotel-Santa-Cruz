@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Reserva.Domain.Factories.reserva
 {
-    internal class ReservaFactory : IReservaFactory
+    public class ReservaFactory : IReservaFactory
     {
         public Reservar CrearReserva(Guid? habitacionId)
         {

@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="EF\Repository\EstadiaRepository.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="EF\Migrations\" />
   </ItemGroup>
 

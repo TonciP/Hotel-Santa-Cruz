@@ -1,4 +1,5 @@
-﻿using Reserva.Domain.Model.Reservas;
+﻿using Reserva.Domain.Model.Clientes;
+using Reserva.Domain.Model.Reservas;
 using ShareKernel.Core;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace Reserva.Domain.Repositories
 {
     public interface IReservarRepository : IRepository<Reservar, Guid>
     {
+        Task CreateAsync(Reservar obj);
         Task UpdateAsync(Reservar obj);
     }
 }

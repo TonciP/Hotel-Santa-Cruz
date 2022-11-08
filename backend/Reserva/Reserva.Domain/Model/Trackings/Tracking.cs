@@ -12,14 +12,18 @@ namespace Reserva.Domain.Model.Trackings
     public class Tracking: Entity
     {
         //public Guid TrackingId { get; set; }
-        [Key]
-        public Guid Id { get; set; }
-        public string Hash { get; private set; }
+        //[Key]
+        //public Guid Id { get; set; }
+        public Guid Hash { get; private set; }
 
         public Tracking()
         {
+
+        }
+        public Tracking(Guid hash)
+        {
             Id = Guid.NewGuid();
-            Hash = Id.ToString();
+            Hash = hash;
         }
         //public Tracking() { }
     }

@@ -8,8 +8,9 @@
 
   <ItemGroup>
     <Folder Include="Dto\" />
+    <Folder Include="UseCase\Commands\Facturas\" />
+    <Folder Include="UseCase\Queries\" />
     <Folder Include="Utils\" />
-    <Folder Include="UseCase\" />
   </ItemGroup>
 
   <ItemGroup>

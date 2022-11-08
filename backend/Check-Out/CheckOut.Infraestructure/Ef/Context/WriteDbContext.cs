@@ -22,7 +22,7 @@ namespace CheckOut.Infraestructure.Ef.Context
             base.OnModelCreating(modelBuilder);
 
             //modelBuilder.ApplyConfiguration<Cliente>(new ClienteWriteConfig());
-            modelBuilder.ApplyConfiguration<Fatura>(new FacturaWriteConfig());
+            modelBuilder.ApplyConfiguration<Factura>(new FacturaWriteConfig());
             modelBuilder.ApplyConfiguration<Pago>(new PagoWriteConfig());
 
 
