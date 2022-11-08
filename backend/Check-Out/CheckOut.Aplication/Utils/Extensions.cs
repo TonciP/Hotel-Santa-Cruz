@@ -1,5 +1,8 @@
 ﻿using CheckOut.Domain.Factories.checkout;
 using CheckOut.Domain.Factories.checkouts;
+using CheckOut.Domain.Factories.factura;
+using CheckOut.Domain.Factories.Factura;
+using CheckOut.Domain.Factories.pago;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -13,7 +16,7 @@ namespace CheckOut.Aplication.Utils
 {
     public static class Extensions
     {
-        public static IServiceCollection AddAapplication(this IServiceCollection services)
+        public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddMediatR(Assembly.GetExecutingAssembly());
 

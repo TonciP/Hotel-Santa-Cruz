@@ -1,0 +1,34 @@
+﻿using MediatR;
+using Reserva.Domain.Model.Clientes;
+using Reserva.Domain.Repositories;
+using ShareKernel.Core;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Reserva.Aplication.UseCase.Commands.Clientes
+{
+    internal class DeleteClienteHandler : IRequestHandler<DeleteClienteCommand, Guid>
+    {
+        private readonly IClienteRepository _clienteRepository;
+        private readonly IUnitOfWork _unitOfWork;
+
+        public DeleteClienteHandler(IClienteRepository clienteRepository, IUnitOfWork unitOfWork)
+        {
+            _clienteRepository = clienteRepository;
+            _unitOfWork = unitOfWork;
+        }
+
+        public async Task<Guid> Handle(DeleteClienteCommand request, CancellationToken cancellationToken)
+        {
+            Cliente cliente = request.clientes;
+            await _clienteRepository.DeleteAsync(cliente);
+
+            await _unitOfWork.Commit();
+
+            return cliente.Id;
+        }
+    }
+}

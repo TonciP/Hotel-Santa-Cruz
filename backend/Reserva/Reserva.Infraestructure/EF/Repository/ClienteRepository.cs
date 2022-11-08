@@ -25,6 +25,11 @@ namespace Reserva.Infraestructure.EF.Repository
             await _context.Clientes.AddAsync(obj);
         }
 
+        public Task DeleteAsync(Cliente obj)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<Cliente> FindByIdAsync(Guid id)
         {
             throw new NotImplementedException();

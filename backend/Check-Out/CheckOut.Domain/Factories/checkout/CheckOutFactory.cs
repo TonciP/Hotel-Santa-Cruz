@@ -14,12 +14,18 @@ namespace CheckOut.Domain.Factories.checkout
     {
         public CheckOutr GenerarCheckOut()
         {
-            throw new NotImplementedException();
+            return new CheckOutr();
         }
 
-        public CheckOutr GenerarCheckOut(Guid clienteId, Guid creadicartId, Facturar factura, Pago pago)
+
+        public CheckOutr GenerarCheckOut(Guid? checkInId,Guid? clienteId, Guid? creadicartId, Facturar factura, Pago pago)
         {
-            throw new NotImplementedException();
+            if (clienteId == null || clienteId == Guid.Empty)
+            {
+                return new CheckOutr();
+            }
+
+            return new CheckOutr(checkInId.Value,clienteId.Value, creadicartId.Value, factura, pago);
         }
     }
 }

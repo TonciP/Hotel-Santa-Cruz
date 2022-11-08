@@ -13,5 +13,6 @@ namespace Reserva.Domain.Repositories
     {
         Task CreateAsync(Cliente obj);
         Task UpdateAsync(Cliente obj);
+        Task DeleteAsync(Cliente obj);
     }
 }

@@ -32,5 +32,12 @@ namespace WebApp.Reserva.Controllers
             var result = await _mediator.Send(command);
             return Ok(result);
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteCliente([FromBody] DeleteClienteCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
     }
 }

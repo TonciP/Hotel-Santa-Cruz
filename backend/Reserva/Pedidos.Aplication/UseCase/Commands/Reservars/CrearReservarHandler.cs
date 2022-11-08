@@ -40,12 +40,13 @@ namespace Reserva.Aplication.UseCase.Commands.Reservars
 
             Reservar obj = new Reservar(tracking, HabitacionId, estadia, cliente);
 
-            obj.enviarCorreo(tracking, cliente);
             //var reserva = _reservaFactory.CrearReserva(request.HabitacionId);
             //reserva.agregar(request.Tracking,request.Estadia, request.Cliente);
 
             await _reservapository.CreateAsync(obj);
             await _unitOfWor.Commit();
+
+            obj.enviarCorreo(tracking, cliente);
 
             return obj.Id;
         }

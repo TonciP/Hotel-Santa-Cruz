@@ -7,9 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Ef\Config\WriteConfig\" />
-    <Folder Include="Ef\Migrations\" />
-    <Folder Include="Ef\Repository\" />
+    <Folder Include="EF\Migrations\" />
     <Folder Include="Queries\" />
   </ItemGroup>
 
