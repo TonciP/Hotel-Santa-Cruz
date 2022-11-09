@@ -21,6 +21,13 @@ namespace WebApp.Reserva.Controllers
             return Ok(result);
         }
 
+        [HttpDelete]
+        public async Task<IActionResult> DeleteReserva([FromBody] DeleteReservaCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
         /*public async Task<string> Mail([FromQuery] string correo)
         {
 

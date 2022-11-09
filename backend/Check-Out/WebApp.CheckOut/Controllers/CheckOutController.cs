@@ -23,5 +23,11 @@ namespace WebApp.CheckOut.Controllers
             return Ok(result);
         }
 
+        [HttpDelete]
+        public async Task<IActionResult> DeleteCheckOut([FromBody] DeleteCheckOutCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
     }
 }

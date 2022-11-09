@@ -11,7 +11,8 @@ namespace Reserva.Aplication.UseCase.Commands.Clientes
     public class DeleteClienteCommand : IRequest<Guid>
     {
         //public ICollection<Cliente> clientes { get; set; }
-        public Cliente clientes { get; set; }
+        //public Cliente clientes { get; set; }
+        public Guid clienteId { get; set; }
 
 
     }

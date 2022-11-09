@@ -14,7 +14,9 @@ namespace CheckOut.Domain.Model.checkouts
         public Guid CheckIn { get; private set; }
         public Guid _clienteId { get; private set; }
         public Guid CreditCartId { get; private set; }
-        public Facturar _factura { get; private set; }
+        //public Facturar _factura { get; private set; }
+        public Facturar _factura { get;  set; }
+        //public Pago _pago { get;  set; }
         public Pago _pago { get; private set; }
 
         public CheckOutr(Guid checkIn, Guid clienteId, Guid creadicartId, Facturar factura, Pago pago)

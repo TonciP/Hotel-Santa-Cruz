@@ -12,7 +12,7 @@ namespace CheckOut.Domain.Model.Facturas
         public int NumeroFactura { get; private set; }
         public decimal Total { get; private set; }
         public DateTime FechaFactura { get; private set; }
-        public DetalleFactura _detalleFactura { get; private set; }
+        public DetalleFactura _detalleFactura { get;  set; }
         //public ICollection<DetalleFactura> _detalleFactura { get; set; }
 
         public Facturar(DetalleFactura detalleFactura, int numeroFactura, decimal total, DateTime fechaFactura)

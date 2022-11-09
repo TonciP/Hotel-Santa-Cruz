@@ -18,7 +18,7 @@ namespace Reserva.Aplication.UseCase.Commands.Reservars
         public Guid HabitacionId { get; set; }
         public Estadia Estadia { get; set; }
 
-        public CreateReservarCommand(ClienteDto cliente, Tracking tracking, Guid habitacionId, Estadia estadia)
+        /*public CreateReservarCommand(ClienteDto cliente, Tracking tracking, Guid habitacionId, Estadia estadia)
         {
             //Cliente = new Cliente(cliente.Nombres, cliente.Apellidos, cliente.Email, cliente.Direccion, cliente.Telefono);
             //Tracking = new Tracking(tracking.Hash);
@@ -29,6 +29,6 @@ namespace Reserva.Aplication.UseCase.Commands.Reservars
             Estadia = estadia;
             HabitacionId = habitacionId;
 
-        }
+        }*/
     }
 }

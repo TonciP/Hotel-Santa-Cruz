@@ -22,6 +22,7 @@ namespace Reserva.Domain.Model.Reservas
         public Tracking _tracking { get; private set; }
         public Guid HabitacionId { get; private set; }
 
+        //public string Estado { get; private set; }
         public Estadia _estadia { get; private set; }
         public Cliente _cliente { get; private set; }
 
@@ -31,14 +32,12 @@ namespace Reserva.Domain.Model.Reservas
             {
                 throw new ArgumentException("El (tracking, habitacion, estadia, cliente) no puede ser vacio");
             }
+
             Id = Guid.NewGuid();
             _tracking = trackingId;
             HabitacionId = habitacionId;
             _estadia = estadiaId;
             _cliente = clienteId;
-
-
-
         }
 
         public Reservar(Guid habitacionId, Cliente cliente)

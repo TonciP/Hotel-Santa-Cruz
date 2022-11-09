@@ -1,4 +1,6 @@
 ﻿using MediatR;
+using Reserva.Aplication.Dto;
+using Reserva.Aplication.UseCase.Queries.Cliente;
 using Reserva.Domain.Model.Clientes;
 using Reserva.Domain.Repositories;
 using ShareKernel.Core;
@@ -23,12 +25,12 @@ namespace Reserva.Aplication.UseCase.Commands.Clientes
 
         public async Task<Guid> Handle(DeleteClienteCommand request, CancellationToken cancellationToken)
         {
-            Cliente cliente = request.clientes;
+            Guid cliente = request.clienteId;
             await _clienteRepository.DeleteAsync(cliente);
 
             await _unitOfWork.Commit();
 
-            return cliente.Id;
+            return cliente;
         }
     }
 }

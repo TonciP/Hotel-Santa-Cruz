@@ -21,6 +21,13 @@ namespace CheckOut.Infraestructure.EF.Repository
             await _context.CheckOutr.AddAsync(obj);
         }
 
+        public async Task DeleteAsync(Guid checkoutId)
+        {
+            var checkout = _context.CheckOutr.Find(checkoutId);
+            _context.Remove(checkout);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<CheckOutr> FindByIdAsync(Guid id)
         {
             throw new NotImplementedException();
