@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Reserva.Domain.Model.Clientes
 {
-    public class Cliente : Entity
+    public class Cliente : AggregateRoot
     {
         //public Guid ClienteId { get; private set; }
         public string Nombres { get; private set; }
@@ -19,16 +19,6 @@ namespace Reserva.Domain.Model.Clientes
         public string Telefono { get; private set; }
 
         public Cliente(string nombres, string apellidos, string email, string direccion, string telefono)
-        {
-            Id = Guid.NewGuid();
-            Nombres = nombres;
-            Apellidos = apellidos;
-            Email = email;
-            Telefono = telefono;
-            Direccion = direccion;
-        }
-
-        public Cliente(Guid clienteId ,string nombres, string apellidos, string email, string direccion, string telefono)
         {
             Id = Guid.NewGuid();
             Nombres = nombres;
@@ -48,7 +38,7 @@ namespace Reserva.Domain.Model.Clientes
         }
 
         // Only for Entity Framework
-        public Cliente() { }
+        //public Cliente() { }
 
     }
 }

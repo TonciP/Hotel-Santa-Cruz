@@ -1,10 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="EF\Repository\EstadiaRepository.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="EF\Migrations\" />
@@ -24,10 +28,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Pedidos.Aplication\Reserva.Aplication.csproj" />
+    <ProjectReference Include="..\Reserva.Applitacion\Reserva.Applitacion.csproj" />
   </ItemGroup>
 
 </Project>

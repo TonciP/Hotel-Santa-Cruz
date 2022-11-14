@@ -8,8 +8,6 @@ using System.Net.Mail;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using iTextSharp.text.pdf;
-using iTextSharp.text;
 using System.Net.Mime;
 
 namespace Reserva.Domain.Event

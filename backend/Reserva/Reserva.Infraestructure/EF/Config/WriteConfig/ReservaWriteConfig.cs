@@ -20,10 +20,12 @@ namespace Reserva.Infraestructure.EF.Config.WriteConfig
             builder.ToTable("reservas");
             builder.Property(preserva => preserva.Id).HasColumnName("reservaId");
 
-            builder.HasOne(preserva => preserva._tracking);
+            //builder.HasOne(preserva => preserva._tracking);
+            builder.Property(preserva => preserva.TrackingId).HasColumnName("trackingId");
+            builder.Property(preserva => preserva.ClienteId).HasColumnName("clienteId");
             builder.Property(preserva => preserva.HabitacionId).HasColumnName("habitacionId");
             builder.HasOne(preserva => preserva._estadia);
-            builder.HasOne(preserva => preserva._cliente);
+            //builder.HasOne(preserva => preserva._cliente);
 
             builder.Ignore(x => x.DomainEvents);
             builder.Ignore("_domainEvents");
