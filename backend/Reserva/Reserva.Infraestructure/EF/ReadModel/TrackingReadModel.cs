@@ -8,5 +8,8 @@ namespace Reserva.Infraestructure.EF.ReadModel
 {
     internal class TrackingReadModel
     {
+        public Guid Id { get; set; }
+        public string Hash { get; private set; }
+        public DateTime Duracion { get; private set; }
     }
 }

@@ -19,7 +19,7 @@ namespace Reserva.Domain.Factories.reserva
             {
                 throw new ArgumentException("Los campos para la reserva estan vacios");
             }
-            return new Reservar(trackingId, habitacionId, estadiaId, clienteId);
+            return new Reservar(trackingId, habitacionId, clienteId);
         }
     }
 }

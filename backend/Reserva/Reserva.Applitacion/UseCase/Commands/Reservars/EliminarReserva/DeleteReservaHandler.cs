@@ -12,42 +12,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Reserva.Aplication.UseCase.Commands.Reservars
+namespace Reserva.Applitacion.UseCase.Commands.Reservars.EliminarReserva
 {
-    internal class CrearReservarHandler : IRequestHandler<CreateReservarCommand, Guid>
+    internal class DeleteReservaHandler : IRequestHandler<DeleteReservaCommand, Guid>
     {
         private readonly IReservarRepository _reservapository;
         private readonly IReservaFactory _reservaFactory;
         private readonly IUnitOfWork _unitOfWor;
 
-        public CrearReservarHandler(IReservarRepository reservarRepository, IReservaFactory reservaFactory, IUnitOfWork unitOfWork)
+        public DeleteReservaHandler(IReservarRepository reservarRepository, IReservaFactory reservaFactory, IUnitOfWork unitOfWork)
         {
             _reservapository = reservarRepository;
             _reservaFactory = reservaFactory;
             _unitOfWor = unitOfWork;
 
         }
-        public async Task<Guid> Handle(CreateReservarCommand request, CancellationToken cancellationToken)
+        public async Task<Guid> Handle(DeleteReservaCommand request, CancellationToken cancellationToken)
         {
-            Guid cliente = request.ClienteId;
-
-            Guid tracking = request.TrackingId;
-
-            Estadia estadia = new Estadia(request.Estadia.FechaIngreso, request.Estadia.FechaSalida);
-
-            Guid HabitacionId = request.HabitacionId;
-
-            Reservar obj = new Reservar(tracking, HabitacionId, estadia, cliente);
 
             //var reserva = _reservaFactory.CrearReserva(request.HabitacionId);
             //reserva.agregar(request.Tracking,request.Estadia, request.Cliente);
 
-            await _reservapository.CreateAsync(obj);
+            Guid reservaId = request.reserva;
+            await _reservapository.DeleteAsync(reservaId);
+
             await _unitOfWor.Commit();
 
-            //obj.enviarCorreo(tracking, cliente);
-
-            return obj.Id;
+            return reservaId;
         }
     }
 }

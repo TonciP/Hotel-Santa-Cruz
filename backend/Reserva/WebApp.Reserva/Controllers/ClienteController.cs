@@ -1,7 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Reserva.Aplication.UseCase.Commands.Clientes;
 using Reserva.Aplication.UseCase.Queries.Cliente;
+using Reserva.Applitacion.UseCase.Commands.Clientes.EliminarCliente;
+using Reserva.Applitacion.UseCase.Commands.Clientes.RegistrarCliente;
 
 namespace WebApp.Reserva.Controllers
 {
@@ -16,6 +17,9 @@ namespace WebApp.Reserva.Controllers
         }
         [Route("search")]
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
         public async Task<IActionResult> SearchCliente([FromQuery] string? nombre = "")
         {
             var query = new GetListaCliente
@@ -27,6 +31,9 @@ namespace WebApp.Reserva.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
         public async Task<IActionResult> CreateCliente([FromBody] CreateClienteCommand command)
         {
             var result = await _mediator.Send(command);
@@ -34,6 +41,10 @@ namespace WebApp.Reserva.Controllers
         }
 
         [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesDefaultResponseType]
         public async Task<IActionResult> DeleteCliente([FromBody] DeleteClienteCommand command)
         {
             var result = await _mediator.Send(command);

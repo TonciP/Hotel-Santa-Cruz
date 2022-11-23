@@ -18,6 +18,8 @@ namespace Reserva.Infraestructure.EF.ReadModel
         //[Key]
         //[Column("estadiaId")]
         public Guid Id { get; set; }
+        //public ReservaReadModel Reserva { get; set; }
+        //public Guid ReservaId { get; set; }
 
         //[Required]
         //[Column(name: "fechaIngreso", TypeName = "Date")]
@@ -27,10 +29,6 @@ namespace Reserva.Infraestructure.EF.ReadModel
         //[Column(name: "fechaSalida" , TypeName = "Date")]
         public DateTime FechaSalida { get; set; }
 
-        public EstadiaReadModel()
-        {
-
-        }
 
 
     }

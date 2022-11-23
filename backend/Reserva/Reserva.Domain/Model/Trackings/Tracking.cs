@@ -14,8 +14,11 @@ namespace Reserva.Domain.Model.Trackings
         //public Guid TrackingId { get; set; }
         //[Key]
         //public Guid Id { get; set; }
-        public string Hash { get; private set; }
-        public DateTime Duracion { get; private set; }
+        public string Hash { get;  set; }
+        //public string Estado { get; private set; }
+        //public DateTime FechaInicio { get; private set; }
+        //public DateTime FechaFinal { get; private set; }
+        public DateTime Duracion { get;  set; }
 
         public Tracking(string hash, DateTime duracion)
         {

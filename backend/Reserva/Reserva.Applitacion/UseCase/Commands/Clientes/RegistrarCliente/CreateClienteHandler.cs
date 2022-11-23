@@ -8,14 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Reserva.Aplication.UseCase.Commands.Clientes.CreateClienteHandler
+namespace Reserva.Applitacion.UseCase.Commands.Clientes.RegistrarCliente
 {
     internal class CreateClienteHandler : IRequestHandler<CreateClienteCommand, Guid>
     {
         private readonly IClienteRepository _clienteRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public CreateClienteHandler (IClienteRepository clienteRepository, IUnitOfWork unitOfWork)
+        public CreateClienteHandler(IClienteRepository clienteRepository, IUnitOfWork unitOfWork)
         {
             _clienteRepository = clienteRepository;
             _unitOfWork = unitOfWork;

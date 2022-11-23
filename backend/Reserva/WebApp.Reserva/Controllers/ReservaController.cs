@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Reserva.Aplication.UseCase.Commands.Reservars;
+using Reserva.Applitacion.UseCase.Commands.Reservars.EliminarReserva;
+using Reserva.Applitacion.UseCase.Commands.Reservars.RegistrarReserva;
 
 namespace WebApp.Reserva.Controllers
 {

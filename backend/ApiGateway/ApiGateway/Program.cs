@@ -1,3 +1,4 @@
+using ApiGateway.Aggregators;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Ocelot.DependencyInjection;
@@ -22,8 +23,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 // Add services to the container.
-builder.Services.AddOcelot(builder.Configuration);
-
+builder.Services.AddOcelot(builder.Configuration)
+    .AddSingletonDefinedAggregator<ArticuloDetailAggregator>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

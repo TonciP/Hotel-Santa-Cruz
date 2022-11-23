@@ -33,4 +33,9 @@
     <ProjectReference Include="..\Reserva.Domain\Reserva.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UseCase\Commands\Otros\" />
+    <Folder Include="UseCase\Commands\Trackings\GenerarTracking\" />
+  </ItemGroup>
+
 </Project>

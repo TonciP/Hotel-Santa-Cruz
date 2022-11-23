@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Compile Remove="EF\Repository\EstadiaRepository.cs" />
+    <Compile Remove="EF\Repository\HabitacionRepository.cs" />
   </ItemGroup>
 
   <ItemGroup>

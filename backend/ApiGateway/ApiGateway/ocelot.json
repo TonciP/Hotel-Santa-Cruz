@@ -1,5 +1,12 @@
 ﻿{
   "GlobalConfiguration": { "BaseUrl": "https://localhost:port/" },
+  "Aggregates": [
+    {
+      "UpstreamPathTemplate": "/api/detalle-articulo/{id}",
+      "RouteKeys": [ "GetArticuloById", "GetProductoById" ],
+      "Aggregator" :  "ArticuloDetailAggregator"
+    }
+  ],
   "Routes": [
     {
       "UpstreamPathTemplate": "/api/cliente/search",

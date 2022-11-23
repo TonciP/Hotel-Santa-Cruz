@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Reserva.Domain.Model.Clientes;
+using Reserva.Domain.ValueObjects;
 using Reserva.Infraestructure.EF.ReadModel;
 using System;
 using System.Collections.Generic;
@@ -15,31 +17,50 @@ namespace Reserva.Infraestructure.EF.Config.ReadConfig
         public void Configure(EntityTypeBuilder<ClienteReadModel> builder)
         {
             builder.ToTable("cliente");
-            builder.HasKey(x => x.Id);
 
+            builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).HasColumnName("clienteId");
 
+            //var nombreConverter = new ValueConverter<PersonNameValue, string>(
+            //    personNameValue => personNameValue.Name,
+            //    stringValue => new PersonNameValue(stringValue)
+            //);
+
             builder.Property(x => x.Nombres)
-                .HasColumnName("nombres")
-                .HasMaxLength(500);
+                //.HasConversion(nombreConverter)
+                .HasColumnName("nombres");
+
+            //var apellidoConverter = new ValueConverter<PersonNameValue, string>(
+            //    personApellidoValue => personApellidoValue.Name,
+            //    stringValue => new PersonNameValue(stringValue)
+            //);
 
             builder.Property(x => x.Apellidos)
-                .HasColumnName("apellidos")
-                .HasMaxLength(500);
+                //.HasConversion(apellidoConverter)
+                .HasColumnName("apellidos");
+
+            //var emailConverter = new ValueConverter<EmailValidValue, string>(
+            //    emailApellidoValue => emailApellidoValue.Mail,
+            //    stringValue => new EmailValidValue(stringValue)
+            //);
 
             builder.Property(x => x.Email)
+                //.HasConversion(emailConverter)
                 .HasColumnName("email");
 
+
             builder.Property(x => x.Direccion)
-                .HasColumnName("direccion")
-                .HasMaxLength(500);
+                .HasColumnName("direccion");
+
+            //var telefonoConverter = new ValueConverter<TelefonoValue, string>(
+            //    telefonoNameValue => telefonoNameValue.Telefono,
+            //    stringValue => new TelefonoValue(stringValue)
+            //);
 
             builder.Property(x => x.Telefono)
-                .HasColumnName("telefono")
-                .HasMaxLength(500);
+                //.HasConversion(telefonoConverter)
+                .HasColumnName("telefono");
 
-            //builder.Ignore(x => x.DomainEvents);
-            //builder.Ignore("_domainEvents");
         }
     }
 }

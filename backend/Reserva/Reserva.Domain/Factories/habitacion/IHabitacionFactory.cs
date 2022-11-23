@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Reserva.Domain.Factories.habitacion
 {
-    public interface IHabitacionFactory
+    public interface ITipoHabitacionFactory
     {
         Habitacion CrearHabitacion(string codigoHabitacion, int limitePersona, string tipoHabitacion,
             decimal precioHabitacion, int numeroHabitacion, string caracteristicaHabitacion, string diponibilidad);

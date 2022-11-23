@@ -9,13 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Reserva.Aplication.UseCase.Commands.Reservars
+namespace Reserva.Applitacion.UseCase.Commands.Reservars.RegistrarReserva
 {
     public class CreateReservarCommand : IRequest<Guid>
     {
         public Guid ClienteId { get; set; }
         public Guid TrackingId { get; set; }
-        public Guid HabitacionId { get; set; }
+        public Guid TipoHabitacionId { get; set; }
         public Estadia Estadia { get; set; }
 
         /*public CreateReservarCommand(ClienteDto cliente, Tracking tracking, Guid habitacionId, Estadia estadia)

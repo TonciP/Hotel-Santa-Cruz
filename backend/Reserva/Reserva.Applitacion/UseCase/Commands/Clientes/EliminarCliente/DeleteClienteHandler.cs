@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Reserva.Aplication.UseCase.Commands.Clientes
+namespace Reserva.Applitacion.UseCase.Commands.Clientes.EliminarCliente
 {
     internal class DeleteClienteHandler : IRequestHandler<DeleteClienteCommand, Guid>
     {

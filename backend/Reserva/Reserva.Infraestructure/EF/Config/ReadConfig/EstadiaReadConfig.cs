@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Reserva.Domain.Model.Estadias;
+using Reserva.Domain.ValueObjects;
 using Reserva.Infraestructure.EF.ReadModel;
 using System;
 using System.Collections.Generic;
@@ -19,14 +21,19 @@ namespace Reserva.Infraestructure.EF.Config.ReadConfig
 
             builder.Property(x => x.Id).HasColumnName("estadiaId");
 
+            //var fecha = new ValueConverter<EstadiaFechaValue, DateTime>(
+            //    estadiValue => estadiValue.Ingreso,
+            //    stringValue => new EstadiaFechaValue(stringValue)
+            //);
+
             builder.Property(x => x.FechaIngreso)
-                .HasColumnName("fechaEntrada");
+                //.HasConversion(fecha)
+                .HasColumnName("fechaIngreso");
 
             builder.Property(x => x.FechaSalida)
+                //.HasConversion(fecha)
                 .HasColumnName("fechaSalida");
 
-            //builder.Ignore(x => x.DomainEvents);
-            //builder.Ignore("_domainEvents");
 
         }
     }

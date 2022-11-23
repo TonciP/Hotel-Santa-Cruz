@@ -7,7 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Factories\habitacion\**" />
+    <Compile Remove="Model\Habitaciones\**" />
+    <EmbeddedResource Remove="Factories\habitacion\**" />
+    <EmbeddedResource Remove="Model\Habitaciones\**" />
+    <None Remove="Factories\habitacion\**" />
+    <None Remove="Model\Habitaciones\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Repositories\IEstadiaRepository.cs" />
+    <Compile Remove="Repositories\IHabitacionRepository.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -39,7 +39,8 @@ namespace Reserva.Infraestructure.utils
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<ITrackingRepository, TrackingRepository>();
-            services.AddScoped<IHabitacionRepository, HabitacionRepository>();
+            //services.AddScoped<IHabitacionRepository, HabitacionRepository>();
+            services.AddScoped<ITipoHabitacionRepository, TipoHabitacionRepository>();
             services.AddScoped<IReservarRepository, ReservaRepository>();
             //services.AddScoped<IEstadiaRepository, EstadiaRepository>();
 
