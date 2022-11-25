@@ -12,7 +12,7 @@ export class HuespedesEntity {
   @Column()
   dni: string;
 
-  @Column({ type: 'datetime', default: '1980-01-01' })
+  @Column({ type: 'datetime', default: '2022-08-11' })
   created_at: Date;
 
 }

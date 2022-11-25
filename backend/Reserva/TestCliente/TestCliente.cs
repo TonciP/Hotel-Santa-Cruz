@@ -2,7 +2,7 @@ using Reserva.Domain.Model.Clientes;
 
 namespace TestCliente
 {
-    public class UnitTest1
+    public class TestCliente
     {
         [Fact]
         public void ClientCreation_Should_Correct()
