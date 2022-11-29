@@ -5,14 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CheckOut.Infraestructure.Ef.ReadModel
+namespace CheckOut.Infraestructure.EF.ReadModel
 {
     internal class FacturaReadModel
     {
         public Guid Id { get; set; }
-        public DetalleFactura DetalleFactura { get; set; }
+        public DetalleFactura _detalleFactura { get; set; }
         public int NumeroFactura { get; set; }
         public decimal Total { get; set; }
+        public DateTime FechaFactura { get; set; }
 
     }
 }

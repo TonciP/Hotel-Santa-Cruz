@@ -10,7 +10,7 @@ namespace Reserva.Domain.Factories.cliente
 {
     public interface IClienteFactory
     {
-        Cliente CrearCliente();
-        Cliente CrearCliente(Guid? clienteId, string nombres, string apellidos, string email, string direccion, string telefono);
+        //Cliente CrearCliente();
+        Cliente CrearCliente(string nombres, string apellidos, string email, string direccion, string telefono);
     }
 }

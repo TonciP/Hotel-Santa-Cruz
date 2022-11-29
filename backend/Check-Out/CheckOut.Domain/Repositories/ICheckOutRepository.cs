@@ -11,5 +11,6 @@ namespace CheckOut.Domain.Repositories
     public interface ICheckOutRepository : IRepository<CheckOutr, Guid>
     {
         Task UpdateAsync(CheckOutr obj);
+        Task DeleteAsync(Guid checkoutId);
     }
 }

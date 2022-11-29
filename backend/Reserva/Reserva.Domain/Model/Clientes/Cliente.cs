@@ -1,34 +1,28 @@
-﻿using ShareKernel.Core;
-using ShareKernel.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Reserva.Domain.ValueObjects;
+using ShareKernel.Core;
 
 namespace Reserva.Domain.Model.Clientes
 {
-    public class Cliente : Entity
+    public class Cliente : AggregateRoot
     {
         //public Guid ClienteId { get; private set; }
-        public string Nombres { get; private set; }
-        public string Apellidos { get; private set; }
-        public string Email { get; private set; }
-        public string Direccion { get; private set; }
-        public string Telefono { get; private set; }
+        public PersonNameValue Nombres { get;  set; }
+        public PersonNameValue Apellidos { get;  set; }
+        public EmailValidValue Email { get;  set; }
+        public string Direccion { get;  set; }
+        public TelefonoValue Telefono { get;  set; }
+
+        //public Cliente(PersonNameValue nombres, PersonNameValue apellidos, EmailValidValue email, string direccion, TelefonoValue telefono)
+        //{
+        //    Id = Guid.NewGuid();
+        //    Nombres = nombres;
+        //    Apellidos = apellidos;
+        //    Email = email;
+        //    Telefono = telefono;
+        //    Direccion = direccion;
+        //}
 
         public Cliente(string nombres, string apellidos, string email, string direccion, string telefono)
-        {
-            Id = Guid.NewGuid();
-            Nombres = nombres;
-            Apellidos = apellidos;
-            Email = email;
-            Telefono = telefono;
-            Direccion = direccion;
-        }
-
-        public Cliente(Guid clienteId ,string nombres, string apellidos, string email, string direccion, string telefono)
         {
             Id = Guid.NewGuid();
             Nombres = nombres;

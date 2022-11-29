@@ -13,5 +13,6 @@ namespace Reserva.Domain.Repositories
     {
         Task CreateAsync(Reservar obj);
         Task UpdateAsync(Reservar obj);
+        Task DeleteAsync(Guid reservaId);
     }
 }

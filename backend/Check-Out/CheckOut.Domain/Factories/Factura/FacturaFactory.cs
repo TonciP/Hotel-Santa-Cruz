@@ -12,12 +12,18 @@ namespace CheckOut.Domain.Factories.factura
     {
         public Facturar CrearFactura()
         {
-            throw new NotImplementedException();
+            return new Facturar();
         }
 
-        public Facturar CrearFactura(Guid facturaId, DetalleFactura detalleFactura, int numeroFactura, decimal total)
+
+
+        public Facturar CrearFactura(DetalleFactura detalleFactura, int numeroFactura, decimal total, DateTime fechaFactura)
         {
-            throw new NotImplementedException();
+            if (detalleFactura == null || numeroFactura == 0 || total == Decimal.Parse("0.0"))
+            {
+                return new Facturar();
+            }
+            return new Facturar(detalleFactura, numeroFactura, total, fechaFactura);
         }
     }
 }

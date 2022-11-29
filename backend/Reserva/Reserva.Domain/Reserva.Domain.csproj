@@ -7,16 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Repositories\ITrackingRepository.cs" />
+    <Compile Remove="Factories\habitacion\**" />
+    <Compile Remove="Model\Habitaciones\**" />
+    <EmbeddedResource Remove="Factories\habitacion\**" />
+    <EmbeddedResource Remove="Model\Habitaciones\**" />
+    <None Remove="Factories\habitacion\**" />
+    <None Remove="Model\Habitaciones\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\ValueObjects\" />
-    <Folder Include="ValueObjects\" />
+    <Compile Remove="Repositories\IEstadiaRepository.cs" />
+    <Compile Remove="Repositories\IHabitacionRepository.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="iTextSharp" Version="5.5.13.3" />
     <PackageReference Include="MediatR" Version="11.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
@@ -30,14 +34,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Reserva\ShareKernel.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EditorConfigFiles Remove="D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\Reserva\Reserva.Domain\Model\Habitaciones\.editorconfig" />
+    <ProjectReference Include="..\ShareKernel\ShareKernel.csproj" />
   </ItemGroup>
 
 </Project>

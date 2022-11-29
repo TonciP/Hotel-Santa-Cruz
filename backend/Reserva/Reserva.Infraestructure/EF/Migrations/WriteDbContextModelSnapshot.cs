@@ -68,7 +68,7 @@ namespace Reserva.Infraestructure.Ef.Migrations
 
                     b.Property<DateTime>("FechaIngreso")
                         .HasColumnType("datetime2")
-                        .HasColumnName("fechaEntrada");
+                        .HasColumnName("fechaIngreso");
 
                     b.Property<DateTime>("FechaSalida")
                         .HasColumnType("datetime2")
@@ -86,28 +86,62 @@ namespace Reserva.Infraestructure.Ef.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("reservaId");
 
-                    b.Property<Guid>("HabitacionId")
+                    b.Property<Guid>("ClienteId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("clienteId");
+
+                    b.Property<Guid>("EstadiaId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Estado")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("estado");
+
+                    b.Property<Guid?>("TipoHabitacionId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("habitacionId");
 
-                    b.Property<Guid>("_clienteId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("_estadiaId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("_trackingId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<Guid?>("TrackingId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("trackingId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("_clienteId");
+                    b.HasIndex("EstadiaId");
 
-                    b.HasIndex("_estadiaId");
+                    b.ToTable("Reservas", (string)null);
+                });
 
-                    b.HasIndex("_trackingId");
+            modelBuilder.Entity("Reserva.Domain.Model.TipoHabitaciones.TipoHabitacion", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("habitacionId");
 
-                    b.ToTable("reservas", (string)null);
+                    b.Property<int>("CantidadDisponible")
+                        .HasColumnType("int")
+                        .HasColumnName("cantidadDisponible");
+
+                    b.Property<decimal>("Costo")
+                        .HasPrecision(14, 2)
+                        .HasColumnType("decimal(14,2)")
+                        .HasColumnName("costo");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("descripcion");
+
+                    b.Property<string>("NombreHabitacion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("nombreHabitacion");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TipoHabitacion", (string)null);
                 });
 
             modelBuilder.Entity("Reserva.Domain.Model.Trackings.Tracking", b =>
@@ -116,6 +150,9 @@ namespace Reserva.Infraestructure.Ef.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("trackingId");
+
+                    b.Property<DateTime>("Duracion")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Hash")
                         .IsRequired()
@@ -129,29 +166,13 @@ namespace Reserva.Infraestructure.Ef.Migrations
 
             modelBuilder.Entity("Reserva.Domain.Model.Reservas.Reservar", b =>
                 {
-                    b.HasOne("Reserva.Domain.Model.Clientes.Cliente", "_cliente")
+                    b.HasOne("Reserva.Domain.Model.Estadias.Estadia", "Estadia")
                         .WithMany()
-                        .HasForeignKey("_clienteId")
+                        .HasForeignKey("EstadiaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Reserva.Domain.Model.Estadias.Estadia", "_estadia")
-                        .WithMany()
-                        .HasForeignKey("_estadiaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Reserva.Domain.Model.Trackings.Tracking", "_tracking")
-                        .WithMany()
-                        .HasForeignKey("_trackingId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("_cliente");
-
-                    b.Navigation("_estadia");
-
-                    b.Navigation("_tracking");
+                    b.Navigation("Estadia");
                 });
 #pragma warning restore 612, 618
         }

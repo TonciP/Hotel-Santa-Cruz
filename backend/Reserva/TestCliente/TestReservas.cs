@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using Reserva.Domain.Model.Clientes;
 using Reserva.Domain.Model.Estadias;
 using Reserva.Domain.Model.Reservas;
@@ -68,3 +69,6 @@ namespace TestCliente
 
     }
 }
+=======
+﻿
+>>>>>>> b9c02606c82056eece3e9bdcbe65124673e4e299

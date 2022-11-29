@@ -1,4 +1,5 @@
-﻿using ShareKernel.Core;
+﻿using Reserva.Domain.ValueObjects;
+using ShareKernel.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Reserva.Domain.Model.Estadias
 {
-    public class Estadia : AggregateRoot
+    public class Estadia : Entity
     {
 
-        public DateTime FechaIngreso { get;  set; }
-        public DateTime FechaSalida { get;  set; }
+        public EstadiaFechaValue FechaIngreso { get;  set; }
+        public EstadiaFechaValue FechaSalida { get;  set; }
 
         public Estadia(DateTime fechaIngreso, DateTime fechaSalida)
         {

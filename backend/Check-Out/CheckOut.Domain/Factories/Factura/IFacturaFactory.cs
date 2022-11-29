@@ -10,7 +10,7 @@ namespace CheckOut.Domain.Factories.Factura
     public interface IFacturaFactory
     {
         Facturar CrearFactura();
-        Facturar CrearFactura(Guid facturaId, DetalleFactura detalleFactura, int numeroFactura, decimal total);
+        Facturar CrearFactura(DetalleFactura detalleFactura, int numeroFactura, decimal total,DateTime fechaFactura);
 
     }
 }

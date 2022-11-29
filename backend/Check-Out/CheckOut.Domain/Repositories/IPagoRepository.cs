@@ -10,6 +10,7 @@ namespace CheckOut.Domain.Repositories
 {
     public interface IPagoRepository : IRepository<Pago, Guid>
     {
+        Task CreateAsync(Pago obj);
         Task UpdateAsync(Pago obj);
     }
 }

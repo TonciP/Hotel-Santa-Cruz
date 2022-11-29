@@ -1,7 +1,6 @@
 ﻿using Reserva.Domain.Event;
 using Reserva.Domain.Model.Clientes;
 using Reserva.Domain.Model.Estadias;
-using Reserva.Domain.Model.Habitaciones;
 using Reserva.Domain.Model.Trackings;
 using ShareKernel.Core;
 using System;
@@ -19,50 +18,44 @@ namespace Reserva.Domain.Model.Reservas
 
     public class Reservar : AggregateRoot
     {
-        public Tracking _tracking { get; private set; }
-        public Guid HabitacionId { get; private set; }
+        //public Tracking _tracking { get; private set; }
+        public Guid? TrackingId { get;  set; }
+        //public Guid? HabitacionId { get; private set; }
+        public Guid? TipoHabitacionId { get;  set; }
 
-        public Estadia _estadia { get; private set; }
-        public Cliente _cliente { get; private set; }
+        public string Estado { get;  set; }
+        //public enum Estado { DISPONIBLE, NO_DISPONIBLE,RESERVADO }
+        public Estadia Estadia { get;  set; }
+        public Guid ClienteId{ get;  set; }
 
-        public Reservar(Tracking trackingId, Guid habitacionId, Estadia estadiaId, Cliente clienteId)
+        public Reservar(Guid? trackingId, Guid? tipoHabitacionId, Guid clienteId)
         {
-            if (trackingId == null || habitacionId == Guid.Empty || estadiaId == null)
+            if (trackingId == Guid.Empty || tipoHabitacionId == null)
             {
                 throw new ArgumentException("El (tracking, habitacion, estadia, cliente) no puede ser vacio");
             }
+
             Id = Guid.NewGuid();
-            _tracking = trackingId;
-            HabitacionId = habitacionId;
-            _estadia = estadiaId;
-            _cliente = clienteId;
-
-
-
+            TrackingId = trackingId;
+            TipoHabitacionId = tipoHabitacionId;
+            //_estadia = estadia;
+            Estado = "Iniciado";
+            ClienteId = clienteId;
         }
 
-        public Reservar(Guid habitacionId, Cliente cliente)
+        public void agregarEstadia(DateTime fechaIngreso, DateTime fechaSalida)
         {
-            Id = Guid.NewGuid();
-            _tracking = new Tracking();
-            HabitacionId = habitacionId;
-            _estadia = new Estadia();
-            _cliente = cliente;
-        }
-        public Reservar(Guid habitacionId)
-        {
-            Id = Guid.NewGuid();
-            _tracking = new Tracking();
-            HabitacionId = habitacionId;
-            _estadia = new Estadia();
-            _cliente = new Cliente();
-        }
-
-        public void enviarCorreo(Tracking trackingId,Cliente clienteId)
-        {
-            var evento = new MailReservaAgregado(trackingId, clienteId);
+            Estadia = new Estadia(fechaIngreso, fechaSalida);
+            Estado = "Reservado";
+            var evento = new EstadiaAgregado(fechaIngreso, fechaSalida);
             AddDomainEvent(evento);
         }
+
+        //public void enviarCorreo(Tracking trackingId,Cliente clienteId)
+        //{
+        //    var evento = new MailReservaAgregado(trackingId, clienteId);
+        //    AddDomainEvent(evento);
+        //}
 
     }
 }

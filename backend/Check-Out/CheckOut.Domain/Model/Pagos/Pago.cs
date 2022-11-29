@@ -18,5 +18,7 @@ namespace CheckOut.Domain.Model.Pagos
 
         }
 
+        public Pago() { }
+
     }
 }

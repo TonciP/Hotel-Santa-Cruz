@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CheckOut.Infraestructure.Ef.ReadModel
+namespace CheckOut.Infraestructure.EF.ReadModel
 {
     internal class PagoReadModel
     {

@@ -38,8 +38,11 @@ namespace Reserva.Infraestructure.utils
             //Singleton: se crea una instancia por cada aplicación
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IClienteRepository, ClienteRepository>();
+            services.AddScoped<ITrackingRepository, TrackingRepository>();
+            //services.AddScoped<IHabitacionRepository, HabitacionRepository>();
+            services.AddScoped<ITipoHabitacionRepository, TipoHabitacionRepository>();
             services.AddScoped<IReservarRepository, ReservaRepository>();
-            services.AddScoped<IEstadiaRepository, EstadiaRepository>();
+            //services.AddScoped<IEstadiaRepository, EstadiaRepository>();
 
             return services;
         }

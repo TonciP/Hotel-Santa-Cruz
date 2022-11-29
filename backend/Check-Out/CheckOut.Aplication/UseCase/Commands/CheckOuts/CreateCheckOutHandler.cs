@@ -28,13 +28,15 @@ namespace CheckOut.Aplication.UseCase.Commands.CheckOuts
         }
 
 
-        public Task<Guid> Handle(CreateCheckOutCommand request, CancellationToken cancellationToken)
+        public async Task<Guid> Handle(CreateCheckOutCommand request, CancellationToken cancellationToken)
         {
-            CheckOutr checkOut = new CheckOutr(request._clienteId, request.CreditCartId, request._factura, request._pago);
+            CheckOutr checkOut = new CheckOutr(request.CheckInt, request._clienteId, request.CreditCartId, request._factura, request._pago);
 
+            await _checkOutRepository.CreateAsync(checkOut);
 
+            await _unitOfWord.Commit();
 
-            throw new NotImplementedException();
+            return checkOut.Id;
         }
     }
 }

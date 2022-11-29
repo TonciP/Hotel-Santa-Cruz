@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Event\" />
-    <Folder Include="Factories\Pago\" />
     <Folder Include="ValueObjects\" />
   </ItemGroup>
 

@@ -9,18 +9,14 @@ namespace Reserva.Domain.Factories.cliente
 {
     public class ClienteFactory : IClienteFactory
     {
-        public Cliente CrearCliente()
+        public Cliente CrearCliente(string nombres, string apellidos, string email, string direccion, string telefono)
         {
-            return new Cliente();
-        }
-
-        public Cliente CrearCliente(Guid? clienteId, string nombres, string apellidos, string email, string direccion, string telefono)
-        {
-            if (clienteId == null || clienteId == Guid.Empty)
+            if (nombres == String.Empty || apellidos == String.Empty || email == String.Empty 
+                || direccion == String.Empty || telefono == String.Empty)
             {
-                return new Cliente();
+                throw new ArgumentException("Los campos para la reserva estan vacios");
             }
-            return new Cliente(clienteId.Value,  nombres,  apellidos,  email,  direccion,  telefono);
+            return new Cliente(nombres,  apellidos,  email,  direccion,  telefono);
         }
     }
 }

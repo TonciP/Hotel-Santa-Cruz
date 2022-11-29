@@ -12,6 +12,6 @@ namespace CheckOut.Domain.Factories.checkouts
     public interface ICheckOutFactory
     {
         CheckOutr GenerarCheckOut();
-        CheckOutr GenerarCheckOut(Guid clienteId, Guid creadicartId, Facturar factura, Pago pago);
+        CheckOutr GenerarCheckOut( Guid? checkInId,Guid? clienteId, Guid? creadicartId, Facturar factura, Pago pago);
     }
 }

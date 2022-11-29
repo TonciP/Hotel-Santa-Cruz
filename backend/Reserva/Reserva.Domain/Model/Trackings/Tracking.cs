@@ -9,21 +9,22 @@ using System.Threading.Tasks;
 
 namespace Reserva.Domain.Model.Trackings
 {
-    public class Tracking: Entity
+    public class Tracking: AggregateRoot
     {
         //public Guid TrackingId { get; set; }
         //[Key]
         //public Guid Id { get; set; }
-        public Guid Hash { get; private set; }
+        public string Hash { get;  set; }
+        //public string Estado { get; private set; }
+        //public DateTime FechaInicio { get; private set; }
+        //public DateTime FechaFinal { get; private set; }
+        public DateTime Duracion { get;  set; }
 
-        public Tracking()
-        {
-
-        }
-        public Tracking(Guid hash)
+        public Tracking(string hash, DateTime duracion)
         {
             Id = Guid.NewGuid();
             Hash = hash;
+            Duracion = duracion;
         }
         //public Tracking() { }
     }

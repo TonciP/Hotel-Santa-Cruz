@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Reserva.Aplication.UseCase.Commands.Reservars;
+using Reserva.Applitacion.UseCase.Commands.Reservars.EliminarReserva;
+using Reserva.Applitacion.UseCase.Commands.Reservars.RegistrarReserva;
 
 namespace WebApp.Reserva.Controllers
 {
@@ -16,6 +17,13 @@ namespace WebApp.Reserva.Controllers
         }
         [HttpPost]
         public async Task<IActionResult> CreateReserva([FromBody] CreateReservarCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteReserva([FromBody] DeleteReservaCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);
