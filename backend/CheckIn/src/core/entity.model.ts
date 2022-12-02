@@ -4,5 +4,6 @@ export class Entity {
 
   @IsUUID()
   readonly id: string;
-  dni: string;
+  created_at: Date;
+
 }
