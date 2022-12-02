@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Security.Application
-build_property.ProjectDir = D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\security\Security.Application\
+build_property.ProjectDir = D:\UNIVERSIDAD_SEMESTRES\Ingeneer-2022-2\Taller-Ingenieria-Web\Proyecto\Develop\Hotel-Santa-Cruz\backend\security\Security.Application\

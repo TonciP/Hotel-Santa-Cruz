@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wmp+gJ1/AUlz1AjF2TOv6fNz432MO2Vdh+xAQ+XSWO2KQcfIAJvaDAz2GmFMieb+AQCyBb/QS4b+mZxpY7Ujsw==",
+  "dgSpecHash": "4hhtZ/7PXzEAGThOPbhOa+AF+VDIcBFM02uN+kvy0E+oijC0zQdqLF4ZlxLqoGlq5MD60wjjTcGs80uZogckVw==",
   "success": true,
-  "projectFilePath": "D:\\UNIVERSIDAD_SEMESTRES\\Ingeneer-2022-2\\Taller-Ingenieria-Web\\Proyecto\\Develop\\Hotel-Santa-Cruz\\security\\Security.Application\\Security.Application.csproj",
+  "projectFilePath": "D:\\UNIVERSIDAD_SEMESTRES\\Ingeneer-2022-2\\Taller-Ingenieria-Web\\Proyecto\\Develop\\Hotel-Santa-Cruz\\backend\\security\\Security.Application\\Security.Application.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

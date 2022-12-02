@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jfowH7t5CB7aYciP4eBZf8+o9+RHNhiCxEPe/mm7E4SMopT27kIIOqfwhgp4VILuj4ZLIlPYTIYKoSdUkvv62A==",
+  "dgSpecHash": "6wsk/xVe+rltFeUqGAfxtfLh38JshnAP0ig3IyMwsZgtr6eKL1hXCL1R7rTZSqxPclZhCdRlYeeziEYauyRUHg==",
   "success": true,
-  "projectFilePath": "D:\\UNIVERSIDAD_SEMESTRES\\Ingeneer-2022-2\\Taller-Ingenieria-Web\\Proyecto\\Develop\\Hotel-Santa-Cruz\\security\\Security.Infrastructure\\Security.Infrastructure.csproj",
+  "projectFilePath": "D:\\UNIVERSIDAD_SEMESTRES\\Ingeneer-2022-2\\Taller-Ingenieria-Web\\Proyecto\\Develop\\Hotel-Santa-Cruz\\backend\\security\\Security.Infrastructure\\Security.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tonci\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\tonci\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
