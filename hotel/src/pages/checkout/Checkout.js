@@ -71,7 +71,7 @@ export default function Checkout() {
       >
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-            Company name
+            Hotel Santa Cruz
           </Typography>
         </Toolbar>
       </AppBar>

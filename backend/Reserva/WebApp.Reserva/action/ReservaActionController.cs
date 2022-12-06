@@ -13,8 +13,9 @@ namespace WebApp.Reserva.action
     public class ReservaActionController
     {
         [NonAction]
-        public static bool enviarCorreo(Cliente cliente, Tracking tracking, TipoHabitacion tipohabitacion)
+        public static async Task<bool> enviarCorreoAsync(Cliente cliente, Tracking tracking, TipoHabitacion tipohabitacion, string qrpath)
         {
+                
             try
             {
                 var fromAddress = new MailAddress("tpinto@nur.edu", "Tonci Pinto");
@@ -22,7 +23,9 @@ namespace WebApp.Reserva.action
                 var toAddress = new MailAddress(cliente.Email, cliente.Nombres);
                 const string fromPassword = "T7537p!!";
                 const string subject = "Reserva Hotel Santa Cruz";
-                const string body = "Su reserva a sido con exito";
+                const string body = @"<h2>
+                                        Su reserva a sido con exito
+                                     </h2>";
 
                 var smtp = new SmtpClient
                 {
@@ -38,7 +41,8 @@ namespace WebApp.Reserva.action
 
                 message.Subject = subject;
                 message.Body = body;
-                message.Attachments.Add(new Attachment("D:\\UNIVERSIDAD_SEMESTRES\\Ingeneer-2022-2\\Taller-Ingenieria-Web\\Proyecto\\Develop\\imagenesQR\\testing.png"));
+                //message.Attachments.Add(new Attachment("D:\\UNIVERSIDAD_SEMESTRES\\Ingeneer-2022-2\\Taller-Ingenieria-Web\\Proyecto\\Develop\\imagenesQR\\testing.png"));
+                message.Attachments.Add(new Attachment(qrpath));
                 smtp.Send(message);
 
                 return true;

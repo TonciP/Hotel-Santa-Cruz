@@ -8,6 +8,7 @@
   //  }
   //],
   "Routes": [
+    // CLIENTE
     {
       "UpstreamPathTemplate": "/api/cliente/search",
       "UpstreamHttpMethod": [ "GET" ],
@@ -30,6 +31,50 @@
 
       "key": "SearchClientes"
       //"RequestIdKey" : "SearchClientes"
+    },
+    {
+      "UpstreamPathTemplate": "/api/cliente",
+      "UpstreamHttpMethod": [ "POST" ],
+
+      "DownstreamPathTemplate": "/api/cliente",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7285
+        }
+      ],
+      "key": "InsertCliente"
+    },
+    // Reserva
+    {
+      "UpstreamPathTemplate": "/api/reserva",
+      "UpstreamHttpMethod": [ "POST" ],
+
+      "DownstreamPathTemplate": "/api/cliente",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7285
+        }
+      ],
+      "key": "InsertReserva"
+    },
+    // TipoHabitacion
+    {
+      "UpstreamPathTemplate": "/api/tipohabitacion",
+      "UpstreamHttpMethod": [ "POST" ],
+
+      "DownstreamPathTemplate": "/api/tipohabitacion",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7285
+        }
+      ],
+      "key": "InsertTipoHabitacion"
     }
   ]
 }

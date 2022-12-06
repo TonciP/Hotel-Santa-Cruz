@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 using Reserva.Domain.Model.Estadias;
 
 namespace TestCliente
@@ -15,15 +15,13 @@ namespace TestCliente
             Estadia estadia = new Estadia(FechaIngreso, FechaSalida);
 
             Assert.NotNull(estadia.FechaIngreso);
-            Assert.Equal(FechaIngreso, estadia.FechaIngreso);
+            Assert.Equal(FechaIngreso, (DateTime)estadia.FechaIngreso);
 
             Assert.NotNull(estadia.FechaSalida);
-            Assert.Equal(FechaSalida, estadia.FechaSalida);
+            Assert.Equal(FechaSalida, (DateTime)estadia.FechaSalida);
 
         }
         
     }
 }
-=======
-﻿
->>>>>>> b9c02606c82056eece3e9bdcbe65124673e4e299
+

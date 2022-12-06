@@ -22,7 +22,6 @@ namespace Reserva.Domain.Event
             //BarcodeQRCode barcodeQR = new BarcodeQRCode("https://www.google.com/", 500, 500, null);
             //Image codeQrImage = barcodeQR.GetImage();
             //codeQrImage.ScaleAbsolute(200, 200);
-
             
             // correo
 
