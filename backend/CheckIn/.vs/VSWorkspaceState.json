@@ -1,6 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Infrastructure.Checkin",
+    "\\Infrastructure.Checkin\\EF",
+    "\\Infrastructure.Checkin\\EF\\Config",
+    "\\Infrastructure.Checkin\\EF\\Config\\ReadConfig",
+    "\\Infrastructure.Checkin\\EF\\Config\\WriteConfig",
+    "\\Infrastructure.Checkin\\EF\\Context",
+    "\\Infrastructure.Checkin\\EF\\ReadModel",
+    "\\Infrastructure.Checkin\\EF\\Repository",
+    "\\Web.Checkin"
   ],
+  "SelectedNode": "\\CheckIn.sln",
   "PreviewInSolutionExplorer": false
 }
