@@ -3,6 +3,6 @@
     "",
     "\\ApiGateway"
   ],
-  "SelectedNode": "\\ApiGateway.sln",
+  "SelectedNode": "\\ApiGateway\\ocelot.json",
   "PreviewInSolutionExplorer": false
 }
