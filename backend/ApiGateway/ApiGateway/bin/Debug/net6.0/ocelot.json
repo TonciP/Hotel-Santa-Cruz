@@ -8,6 +8,7 @@
   //  }
   //],
   "Routes": [
+    // CLIENTE
     {
       "UpstreamPathTemplate": "/api/cliente/search",
       "UpstreamHttpMethod": [ "GET" ],
@@ -30,6 +31,96 @@
 
       "key": "SearchClientes"
       //"RequestIdKey" : "SearchClientes"
+    },
+    {
+      "UpstreamPathTemplate": "/api/cliente",
+      "UpstreamHttpMethod": [ "POST" ],
+
+      "DownstreamPathTemplate": "/api/cliente",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7285
+        }
+      ],
+      "key": "InsertCliente"
+    },
+    // Reserva
+    {
+      "UpstreamPathTemplate": "/api/reserva",
+      "UpstreamHttpMethod": [ "POST" ],
+
+      "DownstreamPathTemplate": "/api/cliente",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7285
+        }
+      ],
+      "key": "InsertReserva"
+    },
+    // TipoHabitacion
+    {
+      "UpstreamPathTemplate": "/api/tipohabitacion",
+      "UpstreamHttpMethod": [ "POST" ],
+
+      "DownstreamPathTemplate": "/api/tipohabitacion",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7285
+        }
+      ],
+      "key": "InsertTipoHabitacion"
+    },
+    // Estadia
+    // Agregar Habitacion
+    {
+      "UpstreamPathTemplate": "/api/Habitacion",
+      "UpstreamHttpMethod": [ "POST" ],
+
+      "DownstreamPathTemplate": "/api/Habitacion",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7098
+        }
+      ],
+      "key": "InsertHabitacion"
+    },
+    // Ver Habitaciones
+    {
+      "UpstreamPathTemplate": "/api/Habitacion/search",
+      "UpstreamHttpMethod": [ "GET" ],
+
+      "DownstreamPathTemplate": "/api/Habitacion",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7098
+        }
+      ],
+      "key": "SearchtHabitacion"
+    },
+    // Ver Huesped
+    {
+      "UpstreamPathTemplate": "/api/Huesped/search",
+      "UpstreamHttpMethod": [ "GET" ],
+
+      "DownstreamPathTemplate": "/api/Huesped/search",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7098
+        }
+      ],
+      "key": "SearchtHuesped"
     }
   ]
 }
