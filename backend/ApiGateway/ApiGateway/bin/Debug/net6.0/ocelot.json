@@ -21,13 +21,13 @@
           "Port": 7285
         }
       ],
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //},
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+      },
 
-      //"RouteClaimsRequirement": {
-      //  "Permission_USER_CLIENTE": "USER_CLIENTE"
-      //},
+      "RouteClaimsRequirement": {
+        "Permission_USER_CLIENTE": "USER_CLIENTE"
+      },
 
       "key": "SearchClientes"
       //"RequestIdKey" : "SearchClientes"
@@ -76,6 +76,14 @@
       ],
       "key": "InsertTipoHabitacion"
     },
+<<<<<<< HEAD
+    // notification
+    {
+      "UpstreamPathTemplate": "/api/notificacion",
+      "UpstreamHttpMethod": [ "POST" ],
+
+      "DownstreamPathTemplate": "/api/notificacion",
+=======
     // Estadia
     // Agregar Habitacion
     {
@@ -83,10 +91,23 @@
       "UpstreamHttpMethod": [ "POST" ],
 
       "DownstreamPathTemplate": "/api/Habitacion",
+>>>>>>> 73dbd296a8249a4014718499ad2e4267df724e21
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
+<<<<<<< HEAD
+          "Port": 7285
+        }
+      ],
+      "key": "SendCorreo"
+    },
+    {
+      "UpstreamPathTemplate": "/api/notificacion/upload",
+      "UpstreamHttpMethod": [ "POST" ],
+
+      "DownstreamPathTemplate": "/api/notificacion/upload",
+=======
           "Port": 7098
         }
       ],
@@ -98,10 +119,17 @@
       "UpstreamHttpMethod": [ "GET" ],
 
       "DownstreamPathTemplate": "/api/Habitacion",
+>>>>>>> 73dbd296a8249a4014718499ad2e4267df724e21
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
+<<<<<<< HEAD
+          "Port": 7285
+        }
+      ],
+      "key": "Upload"
+=======
           "Port": 7098
         }
       ],
@@ -121,6 +149,7 @@
         }
       ],
       "key": "SearchtHuesped"
+>>>>>>> 73dbd296a8249a4014718499ad2e4267df724e21
     }
   ]
 }

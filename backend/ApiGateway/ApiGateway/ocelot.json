@@ -21,13 +21,13 @@
           "Port": 7285
         }
       ],
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //},
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+      },
 
-      //"RouteClaimsRequirement": {
-      //  "Permission_USER_CLIENTE": "USER_CLIENTE"
-      //},
+      "RouteClaimsRequirement": {
+        "Permission_USER_CLIENTE": "USER_CLIENTE"
+      },
 
       "key": "SearchClientes"
       //"RequestIdKey" : "SearchClientes"
@@ -76,66 +76,21 @@
       ],
       "key": "InsertTipoHabitacion"
     },
-    // Estadia
-    // Agregar Habitacion
+    // notification
     {
-      "UpstreamPathTemplate": "/api/Habitacion",
+      "UpstreamPathTemplate": "/api/notificacion/upload",
       "UpstreamHttpMethod": [ "POST" ],
 
-      "DownstreamPathTemplate": "/api/Habitacion",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7098
-        }
-      ],
-      "key": "InsertHabitacion"
-    },
-    // Ver Habitaciones
-    {
-      "UpstreamPathTemplate": "/api/Habitacion/search",
-      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/notificacion/upload",
 
-      "DownstreamPathTemplate": "/api/Habitacion",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7098
-        }
-      ],
-      "key": "SearchtHabitacion"
-    },
-    // Ver Huesped
-    {
-      "UpstreamPathTemplate": "/api/Huesped/search",
-      "UpstreamHttpMethod": [ "GET" ],
+      {
+        "UpstreamPathTemplate": "/api/notificacion/upload",
+        "UpstreamHttpMethod": [ "POST" ],
 
-      "DownstreamPathTemplate": "/api/Huesped/search",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7098
-        }
-      ],
-      "key": "SearchtHuesped"
-    },
-    // Agregar Huesped
-    {
-      "UpstreamPathTemplate": "/api/Huesped",
-      "UpstreamHttpMethod": [ "GET" ],
-
-      "DownstreamPathTemplate": "/api/Huesped",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7098
-        }
-      ],
-      "key": "InsertHuesped"
+        "DownstreamPathTemplate": "/api/notificacion/upload",
+        "Port": 7098
+      }
     }
-  ]
+  ],
+  "key": "GuardarImagen"
 }

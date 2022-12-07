@@ -21,6 +21,6 @@ namespace Reserva.Applitacion.UseCase.Commands.Notifications.EnviarMail
         public Tracking Tracking { get; set; }
         public Cliente Cliente { get; set; }
 
-        public string QRpah;
+        public string qrpath { get; set; }
     }
 }

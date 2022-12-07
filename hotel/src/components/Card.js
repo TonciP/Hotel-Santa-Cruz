@@ -53,7 +53,8 @@ const CardContainer = styled.article`
 		color: white;
 		font-size: 1.1em;
 		width: 100%;
-		background-color: #457b9d;
+		/*background-color: #457b9d;*/
+		background-color: #E74C3C;
 		border: none;
 		cursor: pointer;
 	}
@@ -90,7 +91,8 @@ const CardContainer = styled.article`
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: #457b9d;
+		/*background-color: #457b9d;*/
+		background-color: #E74C3C;
 		border-radius: 5px;
 	}
 
@@ -112,7 +114,8 @@ const CardContainer = styled.article`
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: #457b9d;
+		/*background-color: #457b9d;*/
+		background-color: #E74C3C;
 		border-radius: 5px;
 
 		@media (max-width: 1200px) {
