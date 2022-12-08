@@ -7,6 +7,7 @@ import {
 	faBed,
 	faDollarSign
 } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom/dist';
 
 const CardContainer = styled.article`
 	margin: 2%;
@@ -130,6 +131,7 @@ const CardContainer = styled.article`
 `;
 
 function Card(props) {
+	const navigate = useNavigate();
 	return (
 		<CardContainer>
 			<img
@@ -189,7 +191,7 @@ function Card(props) {
 				</div>
 			</div>
 
-			<button className="button">Reservar</button>
+			<button className="button" onClick={()=> navigate("/checkout")}>Reservar</button>
 		</CardContainer>
 	);
 }
