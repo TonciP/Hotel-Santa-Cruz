@@ -4,15 +4,20 @@ import CheckOut from './pages/checkout/Checkout';
 import Header from './components/Header';
 import Cards from './components/Cards';
 import { FilterProvider } from './components/FilterContext';
+import RouterConfig from './config/RouterConfig';
+
 
 function App() {
   return (
     <div className="App">
       {/* <CheckOut /> */}
       <FilterProvider>
-				<Header />
-				<Cards />
-			</FilterProvider>
+        <Header />
+        <Container>
+          <RouterConfig />
+        </Container>
+        <Cards />
+      </FilterProvider>
     </div>
   );
 }
