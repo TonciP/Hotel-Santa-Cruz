@@ -1,5 +1,6 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom/dist'
+import { Route, Routes } from 'react-router-dom'
+
 import Checkout from '../pages/checkout/Checkout'
 
 import { Reserva } from '../pages/reservas/Reserva'
