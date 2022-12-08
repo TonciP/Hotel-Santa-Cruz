@@ -24,8 +24,6 @@ import FotoProducto from '../pages/FotoProducto';
 const RouterConfig = () => {
     return (
         <Switch>
-
-
             <Route path="/cliente" exact>
                 <ListaClientes/>
             </Route>
@@ -36,7 +34,6 @@ const RouterConfig = () => {
 
             <Route path="/cliente/edit/:id" component={FormCliente}>
             </Route>
-
 
             <Route path="/pedido" exact>
                 <ListaPedido/>
