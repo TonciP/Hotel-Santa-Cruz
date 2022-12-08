@@ -11,7 +11,9 @@ const HeroContainer = styled.section`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	color: #457b9d;
+	/*color: #457b9d;*/
+	
+	color: #E74C3C;
 	text-align: center;
 `;
 

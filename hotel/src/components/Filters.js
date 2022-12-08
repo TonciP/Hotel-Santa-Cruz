@@ -14,7 +14,8 @@ import moment from 'moment';
 
 const Navbar = styled.nav`
 	margin: 0 auto;
-	background-color: #457b9d;
+	/*background-color: #457b9d;*/
+	background-color: #E74C3C;
 	display: flex;
 	flex-direction: row;
 	align-items: center;

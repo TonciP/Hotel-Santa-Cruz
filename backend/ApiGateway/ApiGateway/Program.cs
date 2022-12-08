@@ -9,19 +9,19 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Configuration.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("ocelot.json");
 
-//var secretKey = builder.Configuration.GetValue<string>("JwtOptions:SecretKey");
-//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-//    .AddJwtBearer(options =>
-//    {
-//        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
-//        {
-//            ValidateIssuerSigningKey = true,
-//            ValidateIssuer = false,
-//            ValidateAudience = false,
-//            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secretKey)),
-//            ClockSkew = new System.TimeSpan(0)
-//        };
-//    });
+var secretKey = builder.Configuration.GetValue<string>("JwtOptions:SecretKey");
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secretKey)),
+            ClockSkew = new System.TimeSpan(0)
+        };
+    });
 // Add services to the container.
 builder.Services.AddOcelot(builder.Configuration);
 //    .AddSingletonDefinedAggregator<ArticuloDetailAggregator>();
