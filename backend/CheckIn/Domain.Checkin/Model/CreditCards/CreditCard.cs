@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Estadia.Model.CreditCard
+namespace Domain.Estadia.Model.CreditCards
 {
-    public class CreditCard : AggregateRoot
+    public class CreditCard : Entity
     {
         public string TipoTarjeta { get; set; }
 
@@ -16,12 +16,6 @@ namespace Domain.Estadia.Model.CreditCard
         public CreditCard(string tipoTarjeta, string numeroTarjeta)
         {
             Id = Guid.NewGuid();
-            TipoTarjeta = tipoTarjeta;
-            NumeroTarjeta = numeroTarjeta;
-        }
-        public void EditCreditCard(string tipoTarjeta, string numeroTarjeta)
-        {
-            
             TipoTarjeta = tipoTarjeta;
             NumeroTarjeta = numeroTarjeta;
         }

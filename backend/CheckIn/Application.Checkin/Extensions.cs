@@ -17,7 +17,7 @@ namespace Application.Estadia
         {
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
-            //services.AddScoped<ICheckInFactory, CheckInFactory>();
+            services.AddScoped<ICheckInFactory, CheckInFactory>();
             services.AddScoped<IHabitacionFactory, HabitacionFactory>();
             services.AddScoped<IHuespedFactory, HuespedFactory>();
 

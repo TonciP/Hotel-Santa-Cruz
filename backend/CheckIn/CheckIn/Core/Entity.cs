@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ShareKernel.Core
+﻿namespace ShareKernel.Core
 {
     public abstract class Entity
     {

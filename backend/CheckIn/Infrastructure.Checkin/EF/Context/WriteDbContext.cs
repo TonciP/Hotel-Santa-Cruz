@@ -1,7 +1,7 @@
 ﻿using Domain.Estadia.Model.CheckIn;
-using Domain.Estadia.Model.CreditCard;
+using Domain.Estadia.Model.CreditCards;
 using Domain.Estadia.Model.Habitacion;
-using Domain.Estadia.Model.Huesped;
+using Domain.Estadia.Model.Huespedes;
 using Infrastructure.Estadia.EF.Config.ReadConfig;
 using Infrastructure.Estadia.EF.Config.WriteConfig;
 using Infrastructure.Estadia.EF.ReadModel;
@@ -16,8 +16,8 @@ namespace Infrastructure.Estadia.EF.Context
 {
     internal class WriteDbContext : DbContext
     {
-        //public virtual DbSet<Checkin> Checkin { get; set; }
-        //public virtual DbSet<CreditCard> CreditCard { get; set; }
+        public virtual DbSet<Checkin> Checkin { get; set; }
+        public virtual DbSet<CreditCard> CreditCard { get; set; }
         public virtual DbSet<Habitacion> Habitacion { get; set; }
         public virtual DbSet<Huesped> Huesped { get; set; }
 
@@ -30,8 +30,8 @@ namespace Infrastructure.Estadia.EF.Context
         {
             base.OnModelCreating(modelBuilder);
 
-            //modelBuilder.ApplyConfiguration(new CheckinWriteConfig());
-            //modelBuilder.ApplyConfiguration(new CreditCardWriteConfig());
+            modelBuilder.ApplyConfiguration<Checkin>(new CheckinWriteConfig());
+            modelBuilder.ApplyConfiguration<CreditCard>(new CreditCardWriteConfig());
             modelBuilder.ApplyConfiguration<Habitacion>(new HabitacionWriteConfig());
             modelBuilder.ApplyConfiguration<Huesped>(new HuespedWriteConfig());
 

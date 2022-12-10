@@ -988,24 +988,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tonci\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\LUIS INDIO\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\UNIVERSIDAD_SEMESTRES\\Ingeneer-2022-2\\Taller-Ingenieria-Web\\Proyecto\\Develop\\Hotel-Santa-Cruz\\backend\\ApiGateway\\ApiGateway\\ApiGateway.csproj",
+      "projectUniqueName": "C:\\PracticasDesarrolador\\ProyectoFinalTallerIngenieriaWeb\\Hotel-Santa-Cruz\\backend\\ApiGateway\\ApiGateway\\ApiGateway.csproj",
       "projectName": "ApiGateway",
-      "projectPath": "D:\\UNIVERSIDAD_SEMESTRES\\Ingeneer-2022-2\\Taller-Ingenieria-Web\\Proyecto\\Develop\\Hotel-Santa-Cruz\\backend\\ApiGateway\\ApiGateway\\ApiGateway.csproj",
-      "packagesPath": "C:\\Users\\tonci\\.nuget\\packages\\",
-      "outputPath": "D:\\UNIVERSIDAD_SEMESTRES\\Ingeneer-2022-2\\Taller-Ingenieria-Web\\Proyecto\\Develop\\Hotel-Santa-Cruz\\backend\\ApiGateway\\ApiGateway\\obj\\",
+      "projectPath": "C:\\PracticasDesarrolador\\ProyectoFinalTallerIngenieriaWeb\\Hotel-Santa-Cruz\\backend\\ApiGateway\\ApiGateway\\ApiGateway.csproj",
+      "packagesPath": "C:\\Users\\LUIS INDIO\\.nuget\\packages\\",
+      "outputPath": "C:\\PracticasDesarrolador\\ProyectoFinalTallerIngenieriaWeb\\Hotel-Santa-Cruz\\backend\\ApiGateway\\ApiGateway\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\tonci\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\LUIS INDIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1063,7 +1058,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

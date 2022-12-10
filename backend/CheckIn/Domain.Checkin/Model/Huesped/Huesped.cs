@@ -6,12 +6,12 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Estadia.Model.Huesped
+namespace Domain.Estadia.Model.Huespedes
 {
-    public class Huesped : AggregateRoot
+    public class Huesped : Entity
     {
         //public Guid ClienteId { get; private set; }
-        public string DNI { get; private set; }
+        public string? DNI { get; private set; }
 
         public Huesped(string dni)
         {

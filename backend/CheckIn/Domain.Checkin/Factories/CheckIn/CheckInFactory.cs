@@ -1,4 +1,6 @@
 ﻿using Domain.Estadia.Model.CheckIn;
+using Domain.Estadia.Model.CreditCard;
+using Domain.Estadia.Model.CreditCards;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,13 +16,13 @@ namespace Domain.Estadia.Factories
             return new Checkin();
         }
 
-        public Checkin CrearCheckIn(Guid? checkinId, Guid reservaId, Guid creditCardId, Guid habitacionId, Guid huespedId)
+        public Checkin CrearCheckIn(Guid reservaId, Guid habitacionId,CreditCard creditCardId, Guid huespedId)
         {
-            if (checkinId == null || checkinId == Guid.Empty)
+            if (reservaId == null ||  habitacionId == null || huespedId == null || creditCardId == null)
             {
-                return new Checkin();
+                throw new ArgumentException("Los campos para el checkin estan vacios");
             }
-            return new Checkin(reservaId, creditCardId, habitacionId,  huespedId);
+            return new Checkin(reservaId, habitacionId,  huespedId);
         }
     }
 }

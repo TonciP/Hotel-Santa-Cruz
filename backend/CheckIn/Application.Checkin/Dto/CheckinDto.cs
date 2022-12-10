@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Estadia.Model.CreditCards;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace Application.Estadia.Dto
 
         public Guid ReservaId { get; set; }
 
-        public Guid CreditCardId { get; set; }
+        public CreditCard CreditCard { get; set; }
 
         public Guid HabitacionId { get; set; }
 

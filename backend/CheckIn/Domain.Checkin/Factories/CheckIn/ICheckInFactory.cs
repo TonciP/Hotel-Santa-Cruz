@@ -1,4 +1,5 @@
 ﻿using Domain.Estadia.Model.CheckIn;
+using Domain.Estadia.Model.CreditCards;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace Domain.Estadia.Factories
     public interface ICheckInFactory
     {
         Checkin CrearCheckIn();
-        Checkin CrearCheckIn(Guid? checkinId, Guid reservaId, Guid creditCardId, Guid habitacionId, Guid huespedId);
+        Checkin CrearCheckIn(Guid reservaId, Guid habitacionId,CreditCard creditCardId, Guid huespedId);
     }
 }

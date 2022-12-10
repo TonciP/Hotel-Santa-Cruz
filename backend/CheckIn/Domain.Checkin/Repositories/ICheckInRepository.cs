@@ -10,5 +10,8 @@ namespace Domain.Estadia.Repositories
 {
     public interface ICheckInRepository : IRepository<Checkin, Guid>
     {
+        Task CreateAsync(Checkin obj);
+        Task UpdateAsync(Checkin obj);
+        Task DeleteAsync(Guid checkinId);
     }
 }

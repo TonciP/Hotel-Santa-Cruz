@@ -1,5 +1,5 @@
 ﻿using Domain.Estadia.Model.Habitacion;
-using Domain.Estadia.Model.Huesped;
+using Domain.Estadia.Model.Huespedes;
 using Infrastructure.Estadia.EF.ReadModel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

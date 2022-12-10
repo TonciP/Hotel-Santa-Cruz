@@ -76,80 +76,21 @@
       ],
       "key": "InsertTipoHabitacion"
     },
-<<<<<<< HEAD
     // notification
-    {
-      "UpstreamPathTemplate": "/api/notificacion",
-      "UpstreamHttpMethod": [ "POST" ],
-
-      "DownstreamPathTemplate": "/api/notificacion",
-=======
-    // Estadia
-    // Agregar Habitacion
-    {
-      "UpstreamPathTemplate": "/api/Habitacion",
-      "UpstreamHttpMethod": [ "POST" ],
-
-      "DownstreamPathTemplate": "/api/Habitacion",
->>>>>>> 73dbd296a8249a4014718499ad2e4267df724e21
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-<<<<<<< HEAD
-          "Port": 7285
-        }
-      ],
-      "key": "SendCorreo"
-    },
     {
       "UpstreamPathTemplate": "/api/notificacion/upload",
       "UpstreamHttpMethod": [ "POST" ],
 
       "DownstreamPathTemplate": "/api/notificacion/upload",
-=======
-          "Port": 7098
-        }
-      ],
-      "key": "InsertHabitacion"
-    },
-    // Ver Habitaciones
-    {
-      "UpstreamPathTemplate": "/api/Habitacion/search",
-      "UpstreamHttpMethod": [ "GET" ],
 
-      "DownstreamPathTemplate": "/api/Habitacion",
->>>>>>> 73dbd296a8249a4014718499ad2e4267df724e21
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-<<<<<<< HEAD
-          "Port": 7285
-        }
-      ],
-      "key": "Upload"
-=======
-          "Port": 7098
-        }
-      ],
-      "key": "SearchtHabitacion"
-    },
-    // Ver Huesped
-    {
-      "UpstreamPathTemplate": "/api/Huesped/search",
-      "UpstreamHttpMethod": [ "GET" ],
+      {
+        "UpstreamPathTemplate": "/api/notificacion/upload",
+        "UpstreamHttpMethod": [ "POST" ],
 
-      "DownstreamPathTemplate": "/api/Huesped/search",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7098
-        }
-      ],
-      "key": "SearchtHuesped"
->>>>>>> 73dbd296a8249a4014718499ad2e4267df724e21
+        "DownstreamPathTemplate": "/api/notificacion/upload",
+        "Port": 7098
+      }
     }
-  ]
+  ],
+  "key": "GuardarImagen"
 }
