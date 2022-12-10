@@ -1,4 +1,4 @@
-﻿using Domain.Estadia.Model.CreditCard;
+﻿using Domain.Estadia.Model.CreditCards;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +10,6 @@ namespace Domain.Estadia.Factories
     public interface ICreditCardFactory
     {
         CreditCard CrearCreditCard();
-        CreditCard CrearCreditCard(Guid? creditcardId,string tipoTarjeta, string numeroTarjeta);
+        CreditCard CrearCreditCard(string tipoTarjeta, string numeroTarjeta);
     }
 }

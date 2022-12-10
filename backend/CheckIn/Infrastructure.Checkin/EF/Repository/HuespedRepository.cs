@@ -1,4 +1,4 @@
-﻿using Domain.Estadia.Model.Huesped;
+﻿using Domain.Estadia.Model.Huespedes;
 using Domain.Estadia.Repositories;
 using Infrastructure.Estadia.EF.Context;
 using Microsoft.EntityFrameworkCore;

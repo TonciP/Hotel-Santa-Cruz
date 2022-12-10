@@ -1,4 +1,4 @@
-﻿using Domain.Estadia.Model.Huesped;
+﻿using Domain.Estadia.Model.Huespedes;
 using System;
 using System.Collections.Generic;
 using System.Linq;

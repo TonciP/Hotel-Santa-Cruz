@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Estadia.Model.Huespedes
 {
-    public class Huesped : Entity
+    public class Huesped : AggregateRoot
     {
         //public Guid ClienteId { get; private set; }
         public string? DNI { get; private set; }

@@ -17,7 +17,6 @@ namespace Infrastructure.Estadia.EF.Context
     internal class WriteDbContext : DbContext
     {
         public virtual DbSet<Checkin> Checkin { get; set; }
-        public virtual DbSet<CreditCard> CreditCard { get; set; }
         public virtual DbSet<Habitacion> Habitacion { get; set; }
         public virtual DbSet<Huesped> Huesped { get; set; }
 

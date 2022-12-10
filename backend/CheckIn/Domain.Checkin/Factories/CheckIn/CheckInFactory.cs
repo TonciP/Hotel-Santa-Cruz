@@ -1,5 +1,4 @@
 ﻿using Domain.Estadia.Model.CheckIn;
-using Domain.Estadia.Model.CreditCard;
 using Domain.Estadia.Model.CreditCards;
 using System;
 using System.Collections.Generic;

@@ -14,13 +14,13 @@ namespace Infrastructure.Estadia.EF.ReadModel
 
         public Guid ReservaId { get; set; }
 
-        public CreditCardReadModel? CreditCard { get; set; }
+        public CreditCardReadModel CreditCard { get; set; }
         public Guid CreditCardId { get; set; }
 
         public HabitacionReadModel? Habitacion { get; set; }
         public Guid HabitacionId { get; set; }
 
-        public HuespedReadModel? Huesped { get; set; }
+        public HuespedReadModel Huesped { get; set; }
         public Guid HuespedId { get; set; }
     }
 }

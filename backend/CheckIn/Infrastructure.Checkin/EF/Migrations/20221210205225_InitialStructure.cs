@@ -16,8 +16,8 @@ namespace Infrastructure.Estadia.EF.Migrations
                 columns: table => new
                 {
                     creditCardId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    tipotarjeta = table.Column<string>(name: "tipo_tarjeta", type: "nvarchar(max)", nullable: true),
-                    numerotarjeta = table.Column<string>(name: "numero_tarjeta", type: "nvarchar(max)", nullable: true)
+                    tipotarjeta = table.Column<string>(name: "tipo_tarjeta", type: "nvarchar(max)", nullable: false),
+                    numerotarjeta = table.Column<string>(name: "numero_tarjeta", type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -60,7 +60,7 @@ namespace Infrastructure.Estadia.EF.Migrations
                 {
                     checkinId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     reservaId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    creditCardId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CreditCardId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     habitacionId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     huespedId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
@@ -68,11 +68,10 @@ namespace Infrastructure.Estadia.EF.Migrations
                 {
                     table.PrimaryKey("PK_Checkin", x => x.checkinId);
                     table.ForeignKey(
-                        name: "FK_Checkin_CreditCard_creditCardId",
-                        column: x => x.creditCardId,
+                        name: "FK_Checkin_CreditCard_CreditCardId",
+                        column: x => x.CreditCardId,
                         principalTable: "CreditCard",
-                        principalColumn: "creditCardId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "creditCardId");
                     table.ForeignKey(
                         name: "FK_Checkin_Habitacion_habitacionId",
                         column: x => x.habitacionId,
@@ -88,9 +87,9 @@ namespace Infrastructure.Estadia.EF.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Checkin_creditCardId",
+                name: "IX_Checkin_CreditCardId",
                 table: "Checkin",
-                column: "creditCardId");
+                column: "CreditCardId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Checkin_habitacionId",

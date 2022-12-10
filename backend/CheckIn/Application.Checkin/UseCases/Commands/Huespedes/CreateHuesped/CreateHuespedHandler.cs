@@ -1,6 +1,6 @@
 ﻿using Application.Estadia.UseCases.Commands.Habitaciones.CreateHabitacion;
 using Domain.Estadia.Model.Habitacion;
-using Domain.Estadia.Model.Huesped;
+using Domain.Estadia.Model.Huespedes;
 using Domain.Estadia.Repositories;
 using MediatR;
 using ShareKernel.Core;

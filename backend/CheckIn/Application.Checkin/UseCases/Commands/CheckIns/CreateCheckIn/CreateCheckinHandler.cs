@@ -31,7 +31,7 @@ namespace Application.Estadia.UseCases.Commands.CheckIns.CreateCheckIn
 
             Guid HabitacionId = request.HabitacionId;
 
-            CreditCard creditcard = new CreditCard(request.CreditCard.TipoTarjeta, request.CreditCard.NumeroTarjeta);
+            //CreditCard creditcard = new CreditCard(request.CreditCard.TipoTarjeta, request.CreditCard.NumeroTarjeta);
 
             Guid HuespedId = request.HuespedId;
 
@@ -40,7 +40,7 @@ namespace Application.Estadia.UseCases.Commands.CheckIns.CreateCheckIn
             obj.agregarCreditCard(request.CreditCard.TipoTarjeta, request.CreditCard.NumeroTarjeta);
 
             //var obj = _reservaFactory.CrearReserva(tracking, TipoHabitacionId, estadia, cliente);
-            obj.agregarCreditCard(request.CreditCard.TipoTarjeta, request.CreditCard.NumeroTarjeta);
+            //obj.agregarCreditCard(request.CreditCard.TipoTarjeta, request.CreditCard.NumeroTarjeta);
             await _checkinrepository.CreateAsync(obj);
             await _unitOfWor.Commit();
 

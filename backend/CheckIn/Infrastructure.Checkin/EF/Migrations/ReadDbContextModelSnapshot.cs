@@ -30,8 +30,7 @@ namespace Infrastructure.Estadia.EF.Migrations
                         .HasColumnName("checkinId");
 
                     b.Property<Guid>("CreditCardId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("creditCardId");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("HabitacionId")
                         .HasColumnType("uniqueidentifier")
@@ -64,10 +63,12 @@ namespace Infrastructure.Estadia.EF.Migrations
                         .HasColumnName("creditCardId");
 
                     b.Property<string>("NumeroTarjeta")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("numero_tarjeta");
 
                     b.Property<string>("TipoTarjeta")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("tipo_tarjeta");
 
@@ -138,7 +139,7 @@ namespace Infrastructure.Estadia.EF.Migrations
                     b.HasOne("Infrastructure.Estadia.EF.ReadModel.CreditCardReadModel", "CreditCard")
                         .WithMany()
                         .HasForeignKey("CreditCardId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Infrastructure.Estadia.EF.ReadModel.HabitacionReadModel", "Habitacion")

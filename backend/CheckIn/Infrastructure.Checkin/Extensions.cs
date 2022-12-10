@@ -38,7 +38,7 @@ namespace Infrastructure.Estadia
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IHabitacionRepository, HabitacionRepository>();
             services.AddScoped<IHuespedRepository, HuespedRepository>();
-            services.AddScoped<ICheckInRepository, ICheckInRepository>();
+            services.AddScoped<ICheckInRepository, CheckinRepository>();
 
 
 

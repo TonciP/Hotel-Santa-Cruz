@@ -36,9 +36,8 @@ namespace Infrastructure.Estadia.Queries.CheckIn
             {
                 CheckinId = x.Id,
                 ReservaId = x.ReservaId,
-                CreditCard = x.CreditCard,
                 HabitacionId = x.HabitacionId,
-                HuespedId = x.HuespedId,
+                HuespedId = x.HuespedId
             }).ToListAsync();
 
             return lista;

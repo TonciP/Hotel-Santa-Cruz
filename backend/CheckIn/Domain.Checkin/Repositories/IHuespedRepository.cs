@@ -1,5 +1,5 @@
 ﻿using Domain.Estadia.Model.Habitacion;
-using Domain.Estadia.Model.Huesped;
+using Domain.Estadia.Model.Huespedes;
 using ShareKernel.Core;
 using System;
 using System.Collections.Generic;

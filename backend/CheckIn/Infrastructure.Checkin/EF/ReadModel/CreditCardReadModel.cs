@@ -11,8 +11,8 @@ namespace Infrastructure.Estadia.EF.ReadModel
     {
         [Key]
         public Guid Id { get; set; }
-        public string? TipoTarjeta { get; set; }
+        public string TipoTarjeta { get; set; }
 
-        public string? NumeroTarjeta { get; set; }
+        public string NumeroTarjeta { get; set; }
     }
 }

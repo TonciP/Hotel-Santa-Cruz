@@ -12,7 +12,6 @@ namespace Infrastructure.Estadia.EF.Context
     internal class ReadDbContext : DbContext
     {
         public virtual DbSet<CheckinReadModel> Checkin { get; set; }
-        public virtual DbSet<CreditCardReadModel> CreditCard { get; set; }
         public virtual DbSet<HabitacionReadModel> Habitacion { get; set; }
         public virtual DbSet<HuespedReadModel> Huesped { get; set; }
 
