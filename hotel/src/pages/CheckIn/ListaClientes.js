@@ -17,7 +17,7 @@ const ListaHuespedes = () => {
 
     const obtenerListaHuespedes = () => {
         setCargando(true);
-        axios.get('https://localhost:7098/api/Huesped/search', {
+        axios.get('https://localhost:7098/api/Habitacion/search', {
             headers: {
                 "Authorization": "Bearer " + token
             }

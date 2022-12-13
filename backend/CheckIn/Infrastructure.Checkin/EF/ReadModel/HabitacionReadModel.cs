@@ -13,7 +13,7 @@ namespace Infrastructure.Estadia.EF.ReadModel
         public Guid Id { get; set; }
         public string? CodigoHabitacion { get; set; }
 
-        public string? LimitePersona { get; set; }
+        public int LimitePersona { get; set; }
 
         public Guid TipoHabitacion { get; set; }
 

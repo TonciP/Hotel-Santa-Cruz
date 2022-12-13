@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Estadia.EF.Migrations
 {
     [DbContext(typeof(ReadDbContext))]
-    [Migration("20221213081834_InitialStructure")]
+    [Migration("20221213181032_InitialStructure")]
     partial class InitialStructure
     {
         /// <inheritdoc />
@@ -172,8 +172,8 @@ namespace Infrastructure.Estadia.EF.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("disponibilidad");
 
-                    b.Property<string>("LimitePersona")
-                        .HasColumnType("nvarchar(max)")
+                    b.Property<int>("LimitePersona")
+                        .HasColumnType("int")
                         .HasColumnName("limite_persona");
 
                     b.Property<int>("NumeroHabitacion")

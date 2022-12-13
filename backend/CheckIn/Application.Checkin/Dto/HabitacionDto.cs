@@ -12,7 +12,7 @@ namespace Application.Estadia.Dto
 
         public string CodigoHabitacion { get; set; }
 
-        public string LimitePersona { get; set; }
+        public int LimitePersona { get; set; }
 
         public Guid TipoHabitacion { get; set; }
 

@@ -1,4 +1,5 @@
-﻿using ShareKernel.Core;
+﻿using Domain.Estadia.ValueObjects;
+using ShareKernel.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Domain.Estadia.Model.Pagos
 {
     public class Pagoss : Entity
     {
-        public double Total { get; set; }
+        public PrecioValue Total { get; set; }
     
         public Pagoss(double total)
         {

@@ -1,5 +1,8 @@
 ﻿using Application.Estadia.UseCases.Commands.CheckIns.CreateCheckIn;
+using Application.Estadia.UseCases.Commands.CheckIns.DeleteCheckIn;
 using Application.Estadia.UseCases.Commands.Habitaciones.CreateHabitacion;
+using Application.Estadia.UseCases.Commands.Habitaciones.DeleteHabitacion;
+using Application.Estadia.UseCases.Queries.CheckIn;
 using Application.Estadia.UseCases.Queries.Habitacion;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -23,6 +26,24 @@ namespace Web.Checkin.Controllers.CheckIn
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
         public async Task<IActionResult> CreateCheckin([FromBody] CreateCheckinCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+        [Route("search")]
+        [HttpGet]
+        public async Task<IActionResult> SearchCheckin([FromQuery] string? codigo = "")
+        {
+            var query = new GetListaCheckinQuery
+            {
+                HuespedSearchTerm = codigo
+            };
+            var result = await _mediator.Send(query);
+            return Ok(result);
+
+        }
+        [HttpDelete]
+        public async Task<IActionResult> DeleteCheckin([FromBody] DeleteCheckinCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);

@@ -45,7 +45,7 @@ namespace Infrastructure.Estadia.EF.Migrations
                 {
                     habitacionId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     codigohabitacion = table.Column<string>(name: "codigo_habitacion", type: "nvarchar(max)", nullable: true),
-                    limitepersona = table.Column<string>(name: "limite_persona", type: "nvarchar(max)", nullable: true),
+                    limitepersona = table.Column<int>(name: "limite_persona", type: "int", nullable: false),
                     tipohabitacion = table.Column<Guid>(name: "tipo_habitacion", type: "uniqueidentifier", nullable: false),
                     preciohabitacion = table.Column<double>(name: "precio_habitacion", type: "float", nullable: false),
                     numerohabitacion = table.Column<int>(name: "numero_habitacion", type: "int", nullable: false),

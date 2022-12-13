@@ -16,13 +16,16 @@ namespace Application.Estadia.UseCases.Commands.CheckOuts.CreateCheckOut
     internal class CreateCheckoutHandler : IRequestHandler<CreateCheckoutCommand, Guid>
     {
         private readonly ICheckoutRepository _checkoutrepository;
+        private readonly ICheckInRepository _checkinrepository;
+
         private readonly ICheckoutFactory _checkoutFactory;
 
         private readonly IUnitOfWork _unitOfWor;
 
-        public CreateCheckoutHandler(ICheckoutRepository checkoutrepository, ICheckoutFactory checkoutFactory, IUnitOfWork unitOfWork)
+        public CreateCheckoutHandler(ICheckoutRepository checkoutrepository, ICheckInRepository checkinrepository, ICheckoutFactory checkoutFactory, IUnitOfWork unitOfWork)
         {
             _checkoutrepository = checkoutrepository;
+            _checkinrepository = checkinrepository;
             _checkoutFactory = checkoutFactory;
 
             _unitOfWor = unitOfWork;
@@ -47,7 +50,9 @@ namespace Application.Estadia.UseCases.Commands.CheckOuts.CreateCheckOut
             //var obj = _reservaFactory.CrearReserva(tracking, TipoHabitacionId, estadia, cliente);
             //obj.agregarCreditCard(request.CreditCard.TipoTarjeta, request.CreditCard.NumeroTarjeta);
             await _checkoutrepository.CreateAsync(obj);
+            
             await _unitOfWor.Commit();
+            await _checkinrepository.DeleteAsync(CheckInId);
 
             //obj.enviarCorreo(tracking, cliente);
 

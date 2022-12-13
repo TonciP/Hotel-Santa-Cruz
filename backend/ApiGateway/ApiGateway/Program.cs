@@ -7,7 +7,8 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Configuration.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("ocelot.json");
+builder.Configuration.SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("ocelot.json");
 
 var secretKey = builder.Configuration.GetValue<string>("JwtOptions:SecretKey");
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

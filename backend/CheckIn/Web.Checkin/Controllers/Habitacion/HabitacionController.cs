@@ -1,4 +1,5 @@
 ﻿using Application.Estadia.UseCases.Commands.Habitaciones.CreateHabitacion;
+using Application.Estadia.UseCases.Commands.Habitaciones.DeleteHabitacion;
 using Application.Estadia.UseCases.Queries.Habitacion;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -34,6 +35,12 @@ namespace Web.Checkin.Controllers.Habitacion
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
         public async Task<IActionResult> CreateHabitacion([FromBody] CreateHabitacionCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+        [HttpDelete]
+        public async Task<IActionResult> DeleteReserva([FromBody] DeleteHabitacionCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);

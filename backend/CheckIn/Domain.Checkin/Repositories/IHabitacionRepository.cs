@@ -12,7 +12,7 @@ namespace Domain.Estadia.Repositories
     {
         Task CreateAsync(Habitacion obj);
         Task UpdateAsync(Habitacion obj);
-        Task DeleteAsync(Guid habitaciond);
+        Task DeleteAsync(Guid habitacionid);
 
     }
 }

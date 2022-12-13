@@ -1,4 +1,5 @@
-﻿using ShareKernel.Core;
+﻿using Domain.Estadia.ValueObjects;
+using ShareKernel.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Domain.Estadia.Model.Facturas
 
         public int NumeroFactura { get; set; }
 
-        public double Total { get; set; }
+        public PrecioValue Total { get; set; }
 
         public string? Fecha { get; set; }
 

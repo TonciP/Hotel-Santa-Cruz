@@ -14,7 +14,7 @@ namespace Domain.Estadia.Factories
             return new Habitacion();
         }
 
-        public Habitacion CrearHabitacion(Guid? habitacionId, string codigoHabitacion, string limitePersona, Guid tipoHabitacion, double precioHabitacion, int numeroHabitacion, string caracteristicasHabitacion, string disponibilidad)
+        public Habitacion CrearHabitacion(Guid? habitacionId, string codigoHabitacion, int limitePersona, Guid tipoHabitacion, double precioHabitacion, int numeroHabitacion, string caracteristicasHabitacion, string disponibilidad)
         {
             if (habitacionId == null || habitacionId == Guid.Empty)
             {

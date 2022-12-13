@@ -1,6 +1,7 @@
 ﻿using Application.Estadia.Dto;
 using Application.Estadia.UseCases.Queries.CheckIn;
 using Application.Estadia.UseCases.Queries.Habitacion;
+using Domain.Estadia.Model.CreditCards;
 using Infrastructure.Estadia.EF.Context;
 using Infrastructure.Estadia.EF.ReadModel;
 using MediatR;

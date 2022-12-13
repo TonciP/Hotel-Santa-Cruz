@@ -22,7 +22,7 @@
         }
       ],
       "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
+        "AuthenticationProviderKey": "Bearer"
       },
 
       "RouteClaimsRequirement": {
@@ -76,6 +76,21 @@
       ],
       "key": "InsertTipoHabitacion"
     },
+    // GetHabitaciones
+    {
+      "UpstreamPathTemplate": "api/Habitacion/search",
+      "UpstreamHttpMethod": [ "GET" ],
+
+      "DownstreamPathTemplate": "api/Habitacion/search",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7098
+        }
+      ],
+      "key": "GetHabitacion"
+    },
     // notification
     {
       "UpstreamPathTemplate": "/api/notificacion/upload",
@@ -94,3 +109,4 @@
   ],
   "key": "GuardarImagen"
 }
+    // TipoHabitacion

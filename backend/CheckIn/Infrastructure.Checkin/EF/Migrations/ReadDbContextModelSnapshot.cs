@@ -169,8 +169,8 @@ namespace Infrastructure.Estadia.EF.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("disponibilidad");
 
-                    b.Property<string>("LimitePersona")
-                        .HasColumnType("nvarchar(max)")
+                    b.Property<int>("LimitePersona")
+                        .HasColumnType("int")
                         .HasColumnName("limite_persona");
 
                     b.Property<int>("NumeroHabitacion")

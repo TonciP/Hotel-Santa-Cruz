@@ -1,4 +1,6 @@
-﻿using ShareKernel.Core;
+﻿using Domain.Estadia.ValueObjects;
+using Domain.Ventas.ValueObjects;
+using ShareKernel.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +14,11 @@ namespace Domain.Estadia.Model.Habitacion
     {
         public string CodigoHabitacion { get; set; }
 
-        public string LimitePersona { get; set; }
+        public PersonaLimiteValue LimitePersona { get; set; }
 
         public Guid TipoHabitacion { get; set; }
 
-        public double PrecioHabitacion { get; set; }
+        public PrecioValue PrecioHabitacion { get; set; }
 
         public int NumeroHabitacion { get; set; }
 
@@ -24,7 +26,7 @@ namespace Domain.Estadia.Model.Habitacion
 
         public string Disponibilidad { get; set; }
 
-        public Habitacion(string codigoHabitacion, string limitePersona, Guid tipoHabitacion, double precioHabitacion, int numeroHabitacion, string caracteristicasHabitacion, string disponibilidad)
+        public Habitacion(string codigoHabitacion, int limitePersona, Guid tipoHabitacion, double precioHabitacion, int numeroHabitacion, string caracteristicasHabitacion, string disponibilidad)
         {
             Id = Guid.NewGuid();
             CodigoHabitacion = codigoHabitacion;
@@ -36,7 +38,7 @@ namespace Domain.Estadia.Model.Habitacion
             Disponibilidad = disponibilidad;
         }
 
-        public void EditHabitacion(string codigoHabitacion, string limitePersona, Guid tipoHabitacion, double precioHabitacion, int numeroHabitacion, string caracteristicasHabitacion, string disponibilidad)
+        public void EditHabitacion(string codigoHabitacion, int limitePersona, Guid tipoHabitacion, double precioHabitacion, int numeroHabitacion, string caracteristicasHabitacion, string disponibilidad)
         {
             CodigoHabitacion = codigoHabitacion;
             LimitePersona = limitePersona;
@@ -46,7 +48,11 @@ namespace Domain.Estadia.Model.Habitacion
             CaracteristicasHabitacion = caracteristicasHabitacion;
             Disponibilidad = disponibilidad;
         }
-       
+        public void CambiarDisponibilidad()
+        {
+            Disponibilidad = "Ocupado";
+        }
+
         public Habitacion(){ }
     }
 }

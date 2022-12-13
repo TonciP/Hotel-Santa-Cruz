@@ -16,7 +16,6 @@ export const RouterConfig = () => {
         <Route path='/checkin' element={<Checkin></Checkin>}></Route>
         <Route path='/huespedes' element={<ListaHuespedes></ListaHuespedes>}></Route>
 
-
     </Routes>
   )
 }

@@ -10,6 +10,6 @@ namespace Domain.Estadia.Factories
     public interface IHabitacionFactory
     {
         Habitacion CrearHabitacion();
-        Habitacion CrearHabitacion(Guid? habitacionId, string codigoHabitacion, string limitePersona, Guid tipoHabitacion, double precioHabitacion, int numeroHabitacion, string caracteristicasHabitacion, string disponibilidad);
+        Habitacion CrearHabitacion(Guid? habitacionId, string codigoHabitacion, int limitePersona, Guid tipoHabitacion, double precioHabitacion, int numeroHabitacion, string caracteristicasHabitacion, string disponibilidad);
     }
 }

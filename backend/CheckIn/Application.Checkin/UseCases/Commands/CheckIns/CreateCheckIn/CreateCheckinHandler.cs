@@ -1,6 +1,7 @@
 ﻿using Domain.Estadia.Factories;
 using Domain.Estadia.Model.CheckIn;
 using Domain.Estadia.Model.CreditCards;
+using Domain.Estadia.Model.Habitacion;
 using Domain.Estadia.Repositories;
 using MediatR;
 using ShareKernel.Core;
@@ -15,12 +16,16 @@ namespace Application.Estadia.UseCases.Commands.CheckIns.CreateCheckIn
     internal class CreateCheckinHandler : IRequestHandler<CreateCheckinCommand, Guid>
     {
         private readonly ICheckInRepository _checkinrepository;
+        private readonly IHabitacionRepository _habitacionrepository;
+
         private readonly ICheckInFactory _checkinFactory;
         private readonly IUnitOfWork _unitOfWor;
 
-        public CreateCheckinHandler(ICheckInRepository checkinrepository, ICheckInFactory checkinFactory, IUnitOfWork unitOfWork)
+        public CreateCheckinHandler(ICheckInRepository checkinrepository, IHabitacionRepository habitacionrepository,  ICheckInFactory checkinFactory, IUnitOfWork unitOfWork)
         {
             _checkinrepository = checkinrepository;
+            _habitacionrepository = habitacionrepository;
+
             _checkinFactory = checkinFactory;
             _unitOfWor = unitOfWork;
 
@@ -36,6 +41,9 @@ namespace Application.Estadia.UseCases.Commands.CheckIns.CreateCheckIn
             Guid ClienteId = request.ClienteId;
 
             Checkin obj = new Checkin(ReservaId, HabitacionId, ClienteId);
+            Habitacion habi = await _habitacionrepository.FindByIdAsync(obj.HabitacionId);
+            
+            habi.CambiarDisponibilidad();
 
             obj.agregarCreditCard(request.CreditCard.TipoTarjeta, request.CreditCard.NumeroTarjeta);
 
@@ -45,6 +53,8 @@ namespace Application.Estadia.UseCases.Commands.CheckIns.CreateCheckIn
             //obj.agregarCreditCard(request.CreditCard.TipoTarjeta, request.CreditCard.NumeroTarjeta);
             await _checkinrepository.CreateAsync(obj);
             await _unitOfWor.Commit();
+            await _habitacionrepository.UpdateAsync(habi);
+
 
             //obj.enviarCorreo(tracking, cliente);
 
