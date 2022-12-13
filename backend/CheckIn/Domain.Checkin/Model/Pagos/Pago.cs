@@ -5,21 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Estadia.Model.Pago
+namespace Domain.Estadia.Model.Pagos
 {
-    public class Pago : AggregateRoot
+    public class Pagoss : Entity
     {
         public double Total { get; set; }
     
-        public Pago(double total)
+        public Pagoss(double total)
         {
             Id = Guid.NewGuid();
             Total = total;
         }
-        public void EditPago(double total)
-        {
-            Total = total;
-        }
-        public Pago() { }
+        public Pagoss() { }
     }
 }

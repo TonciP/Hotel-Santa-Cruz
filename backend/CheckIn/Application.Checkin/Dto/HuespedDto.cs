@@ -10,7 +10,7 @@ namespace Application.Estadia.Dto
     {
         public Guid HuespedId { get; set; }
         
-        public string DNI { get;  set; }
+        public string Dni { get;  set; }
 
     }
 }

@@ -8,21 +8,16 @@ using System.Threading.Tasks;
 
 namespace Domain.Estadia.Model.Huespedes
 {
-    public class Huesped : AggregateRoot
+    public class Huesped : Entity
     {
         //public Guid ClienteId { get; private set; }
-        public string? DNI { get; private set; }
+        public string Dni { get;  private set; }
 
-        public Huesped(string dni)
+        public Huesped(string dni) : base()
         {
             Id = Guid.NewGuid();
-            DNI = dni;
+            Dni = dni;
         }
-        public void EditHuesped(string dni)
-        {
-            DNI = dni.Trim();
-        }
-
         
         // Only for Entity Framework
         public Huesped() { }

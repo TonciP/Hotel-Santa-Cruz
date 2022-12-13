@@ -1,4 +1,5 @@
-﻿using Domain.Estadia.Model.CheckOut;
+﻿using Domain.Estadia.Model.CheckIn;
+using Domain.Estadia.Model.CheckOut;
 using ShareKernel.Core;
 using System;
 using System.Collections.Generic;
@@ -8,16 +9,10 @@ using System.Threading.Tasks;
 
 namespace Domain.Estadia.Repositories
 {
-    internal class ICheckoutRepository : IRepository<Checkout, Guid>
+    public interface ICheckoutRepository : IRepository<Checkout, Guid>
     {
-        public Task CreateAsync(Checkout obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Checkout?> FindByIdAsync(Guid id)
-        {
-            throw new NotImplementedException();
-        }
+        Task CreateAsync(Checkout obj);
+        Task UpdateAsync(Checkout obj);
+        Task DeleteAsync(Guid checkoutId);
     }
 }

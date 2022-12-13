@@ -17,7 +17,7 @@ namespace Infrastructure.Estadia.EF.Config.ReadConfig
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).HasColumnName("huespedId");
 
-            builder.Property(x => x.DNI)
+            builder.Property(x => x.Dni)
                 .HasColumnName("dni");
 
         }

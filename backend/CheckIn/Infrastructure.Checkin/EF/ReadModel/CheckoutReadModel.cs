@@ -7,23 +7,23 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Estadia.EF.ReadModel
 {
-    internal class CheckinReadModel
+    internal class CheckoutReadModel
     {
         [Key]
         public Guid Id { get; set; }
 
-        public Guid ReservaId { get; set; }
-
         public Guid ClienteId { get; set; }
 
+        public CheckinReadModel Checkin { get; set; }
+        public Guid CheckinId { get; set; }
 
         public CreditCardReadModel CreditCard { get; set; }
         public Guid CreditCardId { get; set; }
 
-        public HabitacionReadModel Habitacion { get; set; }
-        public Guid HabitacionId { get; set; }
+        public FacturaReadModel Factura { get; set; }
+        public Guid FacturaId { get; set; }
 
-        public HuespedReadModel Huesped { get; set; }
-        public Guid HuespedId { get; set; }
+        public PagoReadModel Pago { get; set; }
+        public Guid PagoId { get; set; }
     }
 }

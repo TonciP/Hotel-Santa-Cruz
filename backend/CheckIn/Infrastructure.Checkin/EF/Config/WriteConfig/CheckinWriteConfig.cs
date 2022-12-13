@@ -22,10 +22,10 @@ namespace Infrastructure.Estadia.EF.Config.WriteConfig
 
             builder.Property(x => x.HabitacionId).HasColumnName("habitacionId");
 
-            builder.Property(x => x.HuespedId).HasColumnName("huespedId");
+            builder.Property(x => x.ClienteId).HasColumnName("clienteId");
 
             builder.HasOne(x => x.CreditCard);
-
+            builder.HasOne(x => x.Huesped);
 
             builder.Ignore(x => x.DomainEvents);
             builder.Ignore("_domainEvents");

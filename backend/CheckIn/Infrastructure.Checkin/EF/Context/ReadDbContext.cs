@@ -13,7 +13,7 @@ namespace Infrastructure.Estadia.EF.Context
     {
         public virtual DbSet<CheckinReadModel> Checkin { get; set; }
         public virtual DbSet<HabitacionReadModel> Habitacion { get; set; }
-        public virtual DbSet<HuespedReadModel> Huesped { get; set; }
+        public virtual DbSet<CheckoutReadModel> Checkout { get; set; }
 
 
         public ReadDbContext(DbContextOptions<ReadDbContext> options) : base(options)
@@ -26,9 +26,12 @@ namespace Infrastructure.Estadia.EF.Context
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfiguration<CheckinReadModel>(new CheckinReadConfig());
+            modelBuilder.ApplyConfiguration<CheckoutReadModel>(new CheckoutReadConfig());
             modelBuilder.ApplyConfiguration<CreditCardReadModel>(new CreditCardReadConfig());
             modelBuilder.ApplyConfiguration<HabitacionReadModel>(new HabitacionReadConfig());
             modelBuilder.ApplyConfiguration<HuespedReadModel>(new HuespedReadConfig());
+            modelBuilder.ApplyConfiguration<FacturaReadModel>(new FacturaReadConfig());
+            modelBuilder.ApplyConfiguration<PagoReadModel>(new PagoReadConfig());
 
 
         }

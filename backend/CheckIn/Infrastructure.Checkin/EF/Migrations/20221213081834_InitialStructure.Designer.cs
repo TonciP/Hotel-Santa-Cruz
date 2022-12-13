@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Estadia.EF.Migrations
 {
     [DbContext(typeof(ReadDbContext))]
-    [Migration("20221210205225_InitialStructure")]
+    [Migration("20221213081834_InitialStructure")]
     partial class InitialStructure
     {
         /// <inheritdoc />
@@ -32,6 +32,10 @@ namespace Infrastructure.Estadia.EF.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("checkinId");
 
+                    b.Property<Guid>("ClienteId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("clienteId");
+
                     b.Property<Guid>("CreditCardId")
                         .HasColumnType("uniqueidentifier");
 
@@ -40,8 +44,7 @@ namespace Infrastructure.Estadia.EF.Migrations
                         .HasColumnName("habitacionId");
 
                     b.Property<Guid>("HuespedId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("huespedId");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("ReservaId")
                         .HasColumnType("uniqueidentifier")
@@ -56,6 +59,44 @@ namespace Infrastructure.Estadia.EF.Migrations
                     b.HasIndex("HuespedId");
 
                     b.ToTable("Checkin", (string)null);
+                });
+
+            modelBuilder.Entity("Infrastructure.Estadia.EF.ReadModel.CheckoutReadModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("checkoutId");
+
+                    b.Property<Guid>("CheckinId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("checkinId");
+
+                    b.Property<Guid>("ClienteId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("clienteId");
+
+                    b.Property<Guid>("CreditCardId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("creditCardId");
+
+                    b.Property<Guid>("FacturaId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PagoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CheckinId");
+
+                    b.HasIndex("CreditCardId");
+
+                    b.HasIndex("FacturaId");
+
+                    b.HasIndex("PagoId");
+
+                    b.ToTable("Checkout", (string)null);
                 });
 
             modelBuilder.Entity("Infrastructure.Estadia.EF.ReadModel.CreditCardReadModel", b =>
@@ -78,6 +119,38 @@ namespace Infrastructure.Estadia.EF.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CreditCard", (string)null);
+                });
+
+            modelBuilder.Entity("Infrastructure.Estadia.EF.ReadModel.FacturaReadModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("facturaId");
+
+                    b.Property<string>("DetalleFactura")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("detalle_factura");
+
+                    b.Property<string>("FechaFactura")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("fecha_factura");
+
+                    b.Property<string>("NumeroFactura")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("numero_factura");
+
+                    b.Property<string>("Total")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("total");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Factura", (string)null);
                 });
 
             modelBuilder.Entity("Infrastructure.Estadia.EF.ReadModel.HabitacionReadModel", b =>
@@ -127,7 +200,7 @@ namespace Infrastructure.Estadia.EF.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("huespedId");
 
-                    b.Property<string>("DNI")
+                    b.Property<string>("Dni")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("dni");
@@ -135,6 +208,22 @@ namespace Infrastructure.Estadia.EF.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Huesped", (string)null);
+                });
+
+            modelBuilder.Entity("Infrastructure.Estadia.EF.ReadModel.PagoReadModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("pagoId");
+
+                    b.Property<double>("Total")
+                        .HasColumnType("float")
+                        .HasColumnName("total");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Pago", (string)null);
                 });
 
             modelBuilder.Entity("Infrastructure.Estadia.EF.ReadModel.CheckinReadModel", b =>
@@ -154,7 +243,7 @@ namespace Infrastructure.Estadia.EF.Migrations
                     b.HasOne("Infrastructure.Estadia.EF.ReadModel.HuespedReadModel", "Huesped")
                         .WithMany()
                         .HasForeignKey("HuespedId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("CreditCard");
@@ -162,6 +251,41 @@ namespace Infrastructure.Estadia.EF.Migrations
                     b.Navigation("Habitacion");
 
                     b.Navigation("Huesped");
+                });
+
+            modelBuilder.Entity("Infrastructure.Estadia.EF.ReadModel.CheckoutReadModel", b =>
+                {
+                    b.HasOne("Infrastructure.Estadia.EF.ReadModel.CheckinReadModel", "Checkin")
+                        .WithMany()
+                        .HasForeignKey("CheckinId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Infrastructure.Estadia.EF.ReadModel.CreditCardReadModel", "CreditCard")
+                        .WithMany()
+                        .HasForeignKey("CreditCardId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Infrastructure.Estadia.EF.ReadModel.FacturaReadModel", "Factura")
+                        .WithMany()
+                        .HasForeignKey("FacturaId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Infrastructure.Estadia.EF.ReadModel.PagoReadModel", "Pago")
+                        .WithMany()
+                        .HasForeignKey("PagoId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Checkin");
+
+                    b.Navigation("CreditCard");
+
+                    b.Navigation("Factura");
+
+                    b.Navigation("Pago");
                 });
 #pragma warning restore 612, 618
         }

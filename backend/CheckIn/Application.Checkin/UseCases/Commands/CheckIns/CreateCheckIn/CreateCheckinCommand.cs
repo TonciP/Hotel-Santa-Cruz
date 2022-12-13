@@ -1,4 +1,6 @@
-﻿using Domain.Estadia.Model.CreditCards;
+﻿using Application.Estadia.Dto;
+using Domain.Estadia.Model.CreditCards;
+using Domain.Estadia.Model.Huespedes;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -12,11 +14,13 @@ namespace Application.Estadia.UseCases.Commands.CheckIns.CreateCheckIn
     {
         public Guid ReservaId { get; set; }
 
-        public CreditCard CreditCard { get; set; }
+        public CreditCardDto CreditCard { get; set; }
 
         public Guid HabitacionId { get; set; }
 
-        public Guid HuespedId { get; set; }
+        public HuespedDto Huesped { get; set; }
+
+        public Guid ClienteId { get; set; }
 
     }
 }

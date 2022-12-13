@@ -16,8 +16,8 @@ namespace Application.Estadia.Dto
 
         public Guid CheckInId { get; set; }
 
-        public Guid FacturaId { get; set; }
+        public FacturaDto Factura { get; set; }
 
-        public Guid PagoId { get; set; }
+        public PagoDto Pago { get; set; }
     }
 }

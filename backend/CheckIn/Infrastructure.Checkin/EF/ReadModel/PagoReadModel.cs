@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Estadia.EF.ReadModel
 {
-    internal class HuespedReadModel
+    internal class PagoReadModel
     {
-        //[Key]
+        [Key]
         public Guid Id { get; set; }
-        public string Dni { get;  set; }
-
+        public double Total { get; set; }
     }
 }

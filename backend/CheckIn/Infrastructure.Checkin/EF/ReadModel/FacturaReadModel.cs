@@ -7,11 +7,16 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Estadia.EF.ReadModel
 {
-    internal class HuespedReadModel
+    internal class FacturaReadModel
     {
-        //[Key]
+        [Key]
         public Guid Id { get; set; }
-        public string Dni { get;  set; }
+        public string DetalleFactura { get; set; }
+
+        public string NumeroFactura { get; set; }
+        public string Total { get; set; }
+        public string FechaFactura { get; set; }
+
 
     }
 }

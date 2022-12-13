@@ -33,11 +33,13 @@ namespace Application.Estadia.UseCases.Commands.CheckIns.CreateCheckIn
 
             //CreditCard creditcard = new CreditCard(request.CreditCard.TipoTarjeta, request.CreditCard.NumeroTarjeta);
 
-            Guid HuespedId = request.HuespedId;
+            Guid ClienteId = request.ClienteId;
 
-            Checkin obj = new Checkin(ReservaId, HabitacionId, HuespedId);
+            Checkin obj = new Checkin(ReservaId, HabitacionId, ClienteId);
 
             obj.agregarCreditCard(request.CreditCard.TipoTarjeta, request.CreditCard.NumeroTarjeta);
+
+            obj.agregarHuesped(request.Huesped.Dni);
 
             //var obj = _reservaFactory.CrearReserva(tracking, TipoHabitacionId, estadia, cliente);
             //obj.agregarCreditCard(request.CreditCard.TipoTarjeta, request.CreditCard.NumeroTarjeta);

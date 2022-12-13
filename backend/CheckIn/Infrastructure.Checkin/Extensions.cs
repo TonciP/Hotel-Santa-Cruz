@@ -37,8 +37,9 @@ namespace Infrastructure.Estadia
             //Singleton: se crea una instancia por cada aplicación
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IHabitacionRepository, HabitacionRepository>();
-            services.AddScoped<IHuespedRepository, HuespedRepository>();
             services.AddScoped<ICheckInRepository, CheckinRepository>();
+            services.AddScoped<ICheckoutRepository, CheckoutRepository>();
+
 
 
 

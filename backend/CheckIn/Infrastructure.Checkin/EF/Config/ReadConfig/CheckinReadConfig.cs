@@ -17,15 +17,16 @@ namespace Infrastructure.Estadia.EF.Config.ReadConfig
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).HasColumnName("checkinId");
 
-            builder.Property(preserva => preserva.ReservaId).HasColumnName("reservaId");
+            builder.Property(x => x.ReservaId).HasColumnName("reservaId");
 
             builder.Property(x => x.HabitacionId).HasColumnName("habitacionId");
             builder.HasOne(x => x.Habitacion).WithMany().HasForeignKey(x => x.HabitacionId);
 
-            builder.Property(x => x.HuespedId).HasColumnName("huespedId");
-            builder.HasOne(x => x.Huesped).WithMany().HasForeignKey(x => x.HuespedId);
+            builder.Property(x => x.ClienteId).HasColumnName("clienteId");
 
             builder.HasOne(x => x.CreditCard).WithMany().HasForeignKey(x => x.CreditCardId).OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(x => x.Huesped).WithMany().HasForeignKey(x => x.HuespedId).OnDelete(DeleteBehavior.NoAction);
+
 
 
             //builder.Property(preserva => preserva.Estadia).HasColumnName("estadia");

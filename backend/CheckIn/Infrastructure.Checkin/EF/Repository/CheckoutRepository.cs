@@ -1,4 +1,5 @@
 ﻿using Domain.Estadia.Model.CheckIn;
+using Domain.Estadia.Model.CheckOut;
 using Domain.Estadia.Repositories;
 using Infrastructure.Estadia.EF.Context;
 using System;
@@ -9,35 +10,36 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Estadia.EF.Repository
 {
-    internal class CheckinRepository : ICheckInRepository
+    internal class CheckoutRepository : ICheckoutRepository
     {
         private readonly WriteDbContext _context;
-        public CheckinRepository(WriteDbContext context)
+        public CheckoutRepository(WriteDbContext context)
         {
             _context = context;
         }
 
 
-        public async Task CreateAsync(Checkin obj)
+        public async Task CreateAsync(Checkout obj)
         {
-            await _context.Checkin.AddAsync(obj);
+            await _context.Checkout.AddAsync(obj);
         }
 
-        public async Task DeleteAsync(Guid checkinId)
+        public async Task DeleteAsync(Guid checkoutId)
         {
-            var checkin = _context.Checkin.Find(checkinId);
-            _context.Remove(checkin);
+            var checkout = _context.Checkout.Find(checkoutId);
+            _context.Remove(checkout);
             await _context.SaveChangesAsync();
         }
 
-        public Task<Checkin> FindByIdAsync(Guid id)
+        public Task<Checkout> FindByIdAsync(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateAsync(Checkin obj)
+        public Task UpdateAsync(Checkout obj)
         {
             throw new NotImplementedException();
         }
     }
 }
+

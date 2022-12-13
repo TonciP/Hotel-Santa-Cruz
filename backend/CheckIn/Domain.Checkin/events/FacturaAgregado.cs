@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Estadia.Model.Factura
+namespace Domain.Estadia.events
 {
-    public class Factura : AggregateRoot
+    public record class FacturaAgregado : DomainEvent
     {
         public string? DetalleFactura { get; set; }
 
@@ -17,21 +17,12 @@ namespace Domain.Estadia.Model.Factura
 
         public string? Fecha { get; set; }
 
-        public Factura(string detalleFactura, int numeroFactura, double total, string fecha)
-        {
-            Id = Guid.NewGuid();
-            DetalleFactura = detalleFactura;
-            NumeroFactura = numeroFactura;
-            Total = total;
-            Fecha = fecha;
-        }
-        public void EditFactura(string detalleFactura, int numeroFactura, double total, string fecha)
+        public FacturaAgregado(string detalleFactura, int numeroFactura, double total, string fecha) : base(DateTime.Now)
         {
             DetalleFactura = detalleFactura;
             NumeroFactura = numeroFactura;
             Total = total;
             Fecha = fecha;
         }
-        public Factura() { }
     }
 }

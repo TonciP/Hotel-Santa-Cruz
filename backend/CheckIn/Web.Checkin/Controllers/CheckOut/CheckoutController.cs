@@ -1,19 +1,18 @@
 ﻿using Application.Estadia.UseCases.Commands.CheckIns.CreateCheckIn;
-using Application.Estadia.UseCases.Commands.Habitaciones.CreateHabitacion;
-using Application.Estadia.UseCases.Queries.Habitacion;
+using Application.Estadia.UseCases.Commands.CheckOuts.CreateCheckOut;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Web.Checkin.Controllers.CheckIn
+namespace Web.Checkin.Controllers.CheckOut
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CheckinController : ControllerBase
+    public class CheckoutController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public CheckinController(IMediator mediator)
+        public CheckoutController(IMediator mediator)
         {
             _mediator = mediator;
         }
@@ -22,7 +21,7 @@ namespace Web.Checkin.Controllers.CheckIn
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
-        public async Task<IActionResult> CreateCheckin([FromBody] CreateCheckinCommand command)
+        public async Task<IActionResult> CreateCheckout([FromBody] CreateCheckoutCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);

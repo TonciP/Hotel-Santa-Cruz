@@ -9,9 +9,9 @@ namespace Domain.Estadia.Model.CreditCards
 {
     public class CreditCard : Entity
     {
-        public string TipoTarjeta { get; set; }
+        public string TipoTarjeta { get; private set; }
 
-        public string NumeroTarjeta { get; set; }
+        public string NumeroTarjeta { get; private set; }
 
         public CreditCard(string tipoTarjeta, string numeroTarjeta)
         {
