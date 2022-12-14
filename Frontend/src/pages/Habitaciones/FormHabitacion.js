@@ -20,9 +20,36 @@ const FormHabitacion = (props) => {
 
 
     useEffect(() => {
+        fetchDatosPedidos(id);
+    }, [id]);
+    const fetchDatosPedidos = (id) => {
 
-    }, []);
+        const url = `https://localhost:7272/api/Habitacion/search?codigo=${id}`;
+        axios.get(url, {
+            headers: {
+                "Authorization": "Bearer " + token
+            }
+        }
+        )
+            .then((response) => {
+                console.log('fetchDatosPedidos', response.data);
+                const objPedidos = response.data;
+                console.log('objPedidos', objPedidos);
 
+                setCodigoHabitacion(objPedidos[0].codigoHabitacion);
+                setLimitePersona(objPedidos[0].limitePersona);
+                setTipoHabitacion(objPedidos[0].tipoHabitacion);
+                setPrecioHabitacion(objPedidos[0].precioHabitacion);
+                setNumeroHabitacion(objPedidos[0].numeroHabitacion);
+                setCaracteristicasHabitacion(objPedidos[0].caracteristicasHabitacion);
+                setDisponibilidad(objPedidos[0].disponibilidad);
+            }).catch(error => {
+                // console.log('error', error);
+                if (error.response.status === 401) {
+                    history.push('/login');
+                }
+            });
+    }
 
     const enviarDatos = () => {
         const params = {
@@ -38,7 +65,7 @@ const FormHabitacion = (props) => {
     }
     const insertarHabitacion = (params) => {
 
-        const url = 'https://localhost:7098/api/Habitacion';
+        const url = 'https://localhost:7272/api/Habitacion';
         axios.post(url, params, {
             headers: {
                 "Authorization": "Bearer " + token

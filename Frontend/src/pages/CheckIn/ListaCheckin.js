@@ -7,27 +7,27 @@ import { useHistory } from 'react-router';
 
 const ListaCheckin = () => {
     const token = localStorage.getItem('token')
-   //const permisos = useSelector(state => state.login.permisos);
+    //const permisos = useSelector(state => state.login.permisos);
     const history = useHistory();
 
     const [lista, setLista] = useState([]);
     const [cargando, setCargando] = useState(false);
 
     useEffect(() => {
-        
-        obtenerListaProductos();
+
+        obtenerListaCheckin();
     }, []);
 
-    const obtenerListaProductos = () => {
+    const obtenerListaCheckin = () => {
         setCargando(true);
-        axios.get('https://localhost:7098/api/Checkin/search', {
+        axios.get('https://localhost:7272/api/Checkin/search', {
             headers: {
                 "Authorization": "Bearer " + token
             }
         }).then(response => {
             console.log('response', response.data);
             console.log(localStorage.getItem('token'));
-            
+
             setLista(response.data);
             setCargando(false);
         }).catch(error => {
@@ -48,8 +48,8 @@ const ListaCheckin = () => {
                 "Authorization": "Bearer " + token
             }
         }
-            ).then((response) => {
-                obtenerListaProductos();
+        ).then((response) => {
+            obtenerListaCheckin();
         }).catch(error => {
             console.log(error);
         });
@@ -60,7 +60,7 @@ const ListaCheckin = () => {
             <Card className="mt-3">
 
                 <Card.Body>
-                    <Card.Title>Productos</Card.Title>
+                    <Card.Title>Check In</Card.Title>
 
                     <table className="table">
                         <thead>
@@ -79,16 +79,16 @@ const ListaCheckin = () => {
                                     <td>{item.habitacionId}</td>
                                     <td>{item.clienteId}</td>
 
-                                        <td>
-                                            <Link className="btn btn-primary" to={"/producto/edit/" + item.id}>Editar</Link>
-                                        </td>
-                                    
+                                    <td>
+                                        <Link className="btn btn-primary" to={"/producto/edit/" + item.id}>Editar</Link>
+                                    </td>
+
                                     <td>
                                         <button className="btn btn-danger" onClick={() => { eliminarProducto(item.id) }}>Eliminar</button>
                                     </td>
                                     <td>
-                                            <Link className="btn btn-success" to={"/detalleproducto/" + item.id}>Ver</Link>
-                                        </td>
+                                        <Link className="btn btn-success" to={"/detalleproducto/" + item.id}>Ver</Link>
+                                    </td>
                                 </tr>
                             )}
 

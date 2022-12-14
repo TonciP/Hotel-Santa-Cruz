@@ -50,7 +50,7 @@ const Header = () => {
                         </NavDropdown>
 
                         <NavDropdown title="CheckIn" id="basic-nav-dropdown">
-                            <Link className="dropdown-item" to="/checkin">Ver Habitaciones</Link>
+                            <Link className="dropdown-item" to="/checkin">Ver CheckIn</Link>
                             <Link className="dropdown-item" to="/checkin/create">Crear CheckIn</Link>
                         </NavDropdown>
 

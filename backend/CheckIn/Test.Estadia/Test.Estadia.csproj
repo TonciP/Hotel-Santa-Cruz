@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Application.Checkin\Application.Estadia.csproj" />
     <ProjectReference Include="..\Domain.Checkin\Domain.Estadia.csproj" />
   </ItemGroup>
 

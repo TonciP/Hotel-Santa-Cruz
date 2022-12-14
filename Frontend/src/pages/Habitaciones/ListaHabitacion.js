@@ -7,27 +7,27 @@ import { useHistory } from 'react-router';
 
 const ListaHabitacion = () => {
     const token = localStorage.getItem('token')
-   //const permisos = useSelector(state => state.login.permisos);
+    //const permisos = useSelector(state => state.login.permisos);
     const history = useHistory();
 
     const [lista, setLista] = useState([]);
     const [cargando, setCargando] = useState(false);
 
     useEffect(() => {
-        
-        obtenerListaPedidos();
+
+        obtenerListaHabitacion();
     }, []);
 
-    const obtenerListaPedidos = () => {
+    const obtenerListaHabitacion = () => {
         setCargando(true);
-        axios.get('https://localhost:7098/api/Habitacion/search', {
+        axios.get("https://localhost:7272/api/Habitacion/search", {
             headers: {
                 "Authorization": "Bearer " + token
             }
         }).then(response => {
             console.log('response', response.data);
             console.log(localStorage.getItem('token'));
-            
+
             setLista(response.data);
             setCargando(false);
         }).catch(error => {
@@ -37,20 +37,26 @@ const ListaHabitacion = () => {
             }
         });
     }
+    const enviarDatos = (codigo) => {
+        const params = {
+            "habitacion": codigo,
+        };
+        eliminarHabitacion(params);
+    }
 
-    const eliminarHabitacion = (id) => {
+    const eliminarHabitacion = (params) => {
         const confirmation = window.confirm('¿Está seguro que desea eliminar?');
         if (!confirmation) {
             return;
         }
-        const url = 'http://127.0.0.1:8000/api/pedido/' + id + '/';
-        axios.delete(url, {
+        const url = 'https://localhost:7098/api/Habitacion';
+        axios.delete(url, params, {
             headers: {
                 "Authorization": "Bearer " + token
             }
         }
-            ).then((response) => {
-                obtenerListaPedidos();
+        ).then((response) => {
+            obtenerListaHabitacion();
         }).catch(error => {
             console.log(error);
         });
@@ -60,17 +66,16 @@ const ListaHabitacion = () => {
         {cargando === false &&
             <Card className="mt-3">
                 <Card.Body>
-                    <Card.Title>Pedidos</Card.Title>
+                    <Card.Title>Habitaciones</Card.Title>
 
                     <table className="table">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>codigoHabitacion</th>
-                                <th>limitePersona</th>
-                                <th>caracteristica</th>
-                                <th>disponibilidad</th>
-
+                                <th>Codigo</th>
+                                <th>Limite Personas</th>
+                                <th>Caracteristica</th>
+                                <th>Disponibilidad</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -82,14 +87,17 @@ const ListaHabitacion = () => {
                                     <td>{item.caracteristicasHabitacion}</td>
                                     <td>{item.disponibilidad}</td>
 
-                                    
                                     <td>
-                                        <button className="btn btn-danger" onClick={() => { eliminarHabitacion(item.habitacionId) }}>Eliminar</button>
+                                        <Link className="btn btn-primary" to={"/habitacion/edit/" + item.codigoHabitacion}>Editar</Link>
                                     </td>
 
                                     <td>
-                                            <Link className="btn btn-success" to={"/detallehabitacion/" + item.codigoHabitacion}>Ver</Link>
-                                        </td>
+                                        <button className="btn btn-danger" onClick={() => { enviarDatos(item.habitacionId) }}>Eliminar</button>
+                                    </td>
+
+                                    <td>
+                                        <Link className="btn btn-success" to={"/detallehabitacion/" + item.codigoHabitacion}>Ver</Link>
+                                    </td>
                                 </tr>
                             )}
 

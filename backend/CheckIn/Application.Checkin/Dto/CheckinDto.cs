@@ -15,6 +15,8 @@ namespace Application.Estadia.Dto
         public Guid ReservaId { get; set; }
 
         public CreditCardDto CreditCard { get; set; }
+        public Guid CreditCardId { get; set; }
+
 
         public Guid HabitacionId { get; set; }
 

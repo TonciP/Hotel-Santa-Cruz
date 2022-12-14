@@ -1,5 +1,6 @@
 ﻿using Application.Estadia.UseCases.Commands.CheckIns.CreateCheckIn;
 using Application.Estadia.UseCases.Commands.CheckIns.DeleteCheckIn;
+using Application.Estadia.UseCases.Commands.CheckIns.UpdateCheckIn;
 using Application.Estadia.UseCases.Commands.Habitaciones.CreateHabitacion;
 using Application.Estadia.UseCases.Commands.Habitaciones.DeleteHabitacion;
 using Application.Estadia.UseCases.Queries.CheckIn;
@@ -36,7 +37,7 @@ namespace Web.Checkin.Controllers.CheckIn
         {
             var query = new GetListaCheckinQuery
             {
-                HuespedSearchTerm = codigo
+                CheckinSearchTerm = codigo
             };
             var result = await _mediator.Send(query);
             return Ok(result);
@@ -44,6 +45,12 @@ namespace Web.Checkin.Controllers.CheckIn
         }
         [HttpDelete]
         public async Task<IActionResult> DeleteCheckin([FromBody] DeleteCheckinCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+        [HttpPut]
+        public async Task<IActionResult> UpdateCheckin([FromBody] UpdateCheckinCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);

@@ -18,13 +18,32 @@ const FormCheckin = (props) => {
     const [huespedId, setHuespedId] = useState('');
     const [dni, setDni] = useState('');
     const [clienteId, setClienteId] = useState('');
+    const [habitacion, setHabitacion] = useState([]);
+
 
 
 
     useEffect(() => {
-
+        fetchDatosHabitacion();
     }, []);
+    const fetchDatosHabitacion = () => {
 
+        const url = 'https://localhost:7272/api/Habitacion/search';
+        axios.get(url
+        )
+            .then((response) => {
+                console.log('fetchDatosHabitacion', response.data);
+                const objProducto = response.data;
+                console.log('objProducto', objProducto);
+                setHabitacion(objProducto);
+
+            }).catch(error => {
+                // console.log('error', error);
+                if (error.response.status === 401) {
+                    history.push('/login');
+                }
+            });
+    }
 
     const enviarDatos = () => {
         const params = {
@@ -45,7 +64,7 @@ const FormCheckin = (props) => {
     }
     const insertarCheckin = (params) => {
 
-        const url = 'https://localhost:7098/api/CheckIn';
+        const url = 'https://localhost:7272/api/CheckIn';
         axios.post(url, params, {
             headers: {
                 "Authorization": "Bearer " + token
@@ -61,7 +80,7 @@ const FormCheckin = (props) => {
 
 
             if (error.response.status === 401) {
-                history.push('/login');
+                history.push('/habitacion');
             }
         });
     }
@@ -73,42 +92,47 @@ const FormCheckin = (props) => {
                     <Card.Body>
                         <Card.Title>Hacer de CheckIn</Card.Title>
 
-                        <div><label>reservaId:</label></div>
+                        <div><label>Reserva:</label></div>
                         <div><input className="form-control" type="text" value={reservaId} onChange={(e) => {
                             setReservaId(e.target.value);
                         }} /></div>
 
-                        <div><label>creditCardId:</label></div>
+                        <div><label>Credit Card:</label></div>
                         <div><input className="form-control" type="text" value={creditCardId} onChange={(e) => {
                             setCreditCardId(e.target.value);
                         }} /></div>
 
-                        <div><label>tipoTarjeta:</label></div>
+                        <div><label>Tipo Tarjeta:</label></div>
                         <div><input className="form-control" type="text" value={tipoTarjeta} onChange={(e) => {
                             setTipotarjeta(e.target.value);
                         }} /></div>
 
-                        <div><label>numeroTarjeta:</label></div>
+                        <div><label>Numero Tarjeta:</label></div>
                         <div><input className="form-control" type="text" value={numeroTarjeta} onChange={(e) => {
                             setNumeroTarjeta(e.target.value);
                         }} /></div>
 
-                        <div><label>habitacionId:</label></div>
-                        <div><input className="form-control" type="text" value={habitacionId} onChange={(e) => {
+                        <div><label>Habitacion:</label></div>
+                        <select name="habitacion" className='form-control' onChange={(e) => {
                             setHabitacionId(e.target.value);
-                        }} /></div>
+                        }}>
+                            {habitacion.map(elemento => (
+                                <option key={elemento.id} value={elemento.habitacionId}>{elemento.habitacionId}</option>
+                            )
+                            )}
+                        </select>
 
-                        <div><label>huespedId:</label></div>
+                        <div><label>Huesped:</label></div>
                         <div><input className="form-control" type="text" value={huespedId} onChange={(e) => {
                             setHuespedId(e.target.value);
                         }} /></div>
 
-                        <div><label>dni:</label></div>
+                        <div><label>Dni:</label></div>
                         <div><input className="form-control" type="text" value={dni} onChange={(e) => {
                             setDni(e.target.value);
                         }} /></div>
 
-                        <div><label>clienteId:</label></div>
+                        <div><label>Cliente:</label></div>
                         <div><input className="form-control" type="text" value={clienteId} onChange={(e) => {
                             setClienteId(e.target.value);
                         }} /></div>

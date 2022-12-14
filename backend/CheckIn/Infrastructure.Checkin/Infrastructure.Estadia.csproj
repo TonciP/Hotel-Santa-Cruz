@@ -23,4 +23,8 @@
     <ProjectReference Include="..\Application.Checkin\Application.Estadia.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Queries\CreditCard\" />
+  </ItemGroup>
+
 </Project>

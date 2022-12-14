@@ -10,7 +10,7 @@ namespace Application.Estadia.UseCases.Queries.CheckIn
 {
     public class GetListaCheckinQuery : IRequest<IEnumerable<CheckinDto>>
     {
-        public string HuespedSearchTerm { get; set; }
+        public string CheckinSearchTerm { get; set; }
 
     }
 }

@@ -20,7 +20,7 @@ const DetalleHabitacion = (props) => {
     }, [id]);
 
     const obtenerListaHabitacion = () => {
-        axios.get(`https://localhost:7098/api/Habitacion/search?codigo=${id}`, {
+        axios.get(`https://localhost:7272/api/Habitacion/search?codigo=${id}`, {
             headers: {
                 "Authorization": "Bearer " + token
             }

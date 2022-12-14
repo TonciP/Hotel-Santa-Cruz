@@ -1,7 +1,5 @@
 ﻿using Application.Estadia.Dto;
 using Application.Estadia.UseCases.Queries.CheckIn;
-using Application.Estadia.UseCases.Queries.Habitacion;
-using Domain.Estadia.Model.CreditCards;
 using Infrastructure.Estadia.EF.Context;
 using Infrastructure.Estadia.EF.ReadModel;
 using MediatR;
@@ -14,11 +12,11 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Estadia.Queries.CheckIn
 {
-    internal class GetListaCheckinHandler : IRequestHandler<GetListaCheckinQuery, IEnumerable<CheckinDto>>
+    internal class GetListaCheckInHandler : IRequestHandler<GetListaCheckinQuery, IEnumerable<CheckinDto>>
     {
         private readonly DbSet<CheckinReadModel> checkin;
 
-        public GetListaCheckinHandler(ReadDbContext dbContext)
+        public GetListaCheckInHandler(ReadDbContext dbContext)
         {
             checkin = dbContext.Checkin;
         }
@@ -28,15 +26,16 @@ namespace Infrastructure.Estadia.Queries.CheckIn
         {
             var query = checkin.AsNoTracking().AsQueryable();
 
-            if (!string.IsNullOrEmpty(request.HuespedSearchTerm))
+            if (!string.IsNullOrEmpty(request.CheckinSearchTerm))
             {
-                query = query.Where(x => x.HuespedId.Equals(request.HuespedSearchTerm.ToLower()));
+                query = query.Where(x => x.Id.Equals(request.CheckinSearchTerm));
             }
 
             var lista = await query.Select(x => new CheckinDto
             {
                 CheckinId = x.Id,
                 ReservaId = x.ReservaId,
+                CreditCardId = x.CreditCardId,
                 HabitacionId = x.HabitacionId,
                 ClienteId = x.ClienteId
             }).ToListAsync();

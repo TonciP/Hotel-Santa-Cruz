@@ -1,5 +1,7 @@
-﻿using Application.Estadia.UseCases.Commands.Habitaciones.CreateHabitacion;
+﻿using Application.Estadia.UseCases.Commands.CheckIns.UpdateCheckIn;
+using Application.Estadia.UseCases.Commands.Habitaciones.CreateHabitacion;
 using Application.Estadia.UseCases.Commands.Habitaciones.DeleteHabitacion;
+using Application.Estadia.UseCases.Commands.Habitaciones.UpdateHabitacion;
 using Application.Estadia.UseCases.Queries.Habitacion;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -40,7 +42,13 @@ namespace Web.Checkin.Controllers.Habitacion
             return Ok(result);
         }
         [HttpDelete]
-        public async Task<IActionResult> DeleteReserva([FromBody] DeleteHabitacionCommand command)
+        public async Task<IActionResult> DeleteHabitacion([FromBody] DeleteHabitacionCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+        [HttpPut]
+        public async Task<IActionResult> UpdateHabitacion([FromBody] UpdateHabitacionCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);

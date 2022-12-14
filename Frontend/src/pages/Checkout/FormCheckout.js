@@ -20,30 +20,49 @@ const FormCheckout = (props) => {
     const [fecha, setFecha] = useState('');
     const [pagoId, setPagoId] = useState('');
     const [total, setTotal] = useState(0);
+    const [checkin, setCheckin] = useState([]);
+
 
 
 
 
     useEffect(() => {
-
+        fetchDatosCheckin();
     }, []);
 
+    const fetchDatosCheckin = () => {
 
+        const url = 'https://localhost:7272/api/Checkin/search';
+        axios.get(url
+        )
+            .then((response) => {
+                console.log('fetchDatosCheckin', response.data);
+                const objCheckin = response.data;
+                console.log('objCheckin', objCheckin);
+                setCheckin(objCheckin);
+
+            }).catch(error => {
+                // console.log('error', error);
+                if (error.response.status === 401) {
+                    history.push('/habitacion');
+                }
+            });
+    }
     const enviarDatos = () => {
         const params = {
-            "clienteId": clienteId,
+            "clienteId": "ccaeef0e-1184-49bc-8050-b7e43884f66c",
             "creditCardId": creditCardId,
             "checkInId": checkInId,
             "factura": {
-                "facturaId": facturaId,
+                "facturaId": "ccaeef0e-1184-49bc-8050-b7e43884f66c",
                 "detalleFactura": detalleFactura,
                 "numeroFactura": numeroFactura,
                 "total": totalfactura,
                 "fecha": fecha
             },
             "pago": {
-                "pagoId": pagoId,
-                "total": total
+                "pagoId": "ccaeef0e-1184-49bc-8050-b7e43884f66c",
+                "total": totalfactura
             }
         };
         insertarCheckout(params);
@@ -76,27 +95,24 @@ const FormCheckout = (props) => {
                 <Card className="mt-3">
 
                     <Card.Body>
-                        <Card.Title>Hacer de CheckIn</Card.Title>
+                        <Card.Title>Hacer de CheckOut</Card.Title>
 
-                        <div><label>clienteId:</label></div>
-                        <div><input className="form-control" type="text" value={clienteId} onChange={(e) => {
-                            setClienteId(e.target.value);
-                        }} /></div>
-
-                        <div><label>creditCardId:</label></div>
+                        <div><label>Credit Card:</label></div>
                         <div><input className="form-control" type="text" value={creditCardId} onChange={(e) => {
                             setCreditCardId(e.target.value);
                         }} /></div>
 
-                        <div><label>checkInId:</label></div>
-                        <div><input className="form-control" type="text" value={checkInId} onChange={(e) => {
+                        <div><label>CheckIn:</label></div>
+                        <select name="checkin" className='form-control' onChange={(e) => {
                             setCheckInId(e.target.value);
-                        }} /></div>
+                        }}>
+                            {checkin.map(elemento => (
+                                <option key={elemento.checkinId} value={elemento.checkinId}>{elemento.checkinId}</option>
+                            )
+                            )}
+                        </select>
 
-                        <div><label>facturaId:</label></div>
-                        <div><input className="form-control" type="text" value={facturaId} onChange={(e) => {
-                            setFacturaId(e.target.value);
-                        }} /></div>
+                        <Card.Title>Facturacion</Card.Title>
 
                         <div><label>detalleFactura:</label></div>
                         <div><input className="form-control" type="text" value={detalleFactura} onChange={(e) => {
@@ -116,16 +132,6 @@ const FormCheckout = (props) => {
                         <div><label>fecha:</label></div>
                         <div><input className="form-control" type="text" value={fecha} onChange={(e) => {
                             setFecha(e.target.value);
-                        }} /></div>
-
-                        <div><label>pagoId:</label></div>
-                        <div><input className="form-control" type="text" value={pagoId} onChange={(e) => {
-                            setPagoId(e.target.value);
-                        }} /></div>
-
-                        <div><label>total:</label></div>
-                        <div><input className="form-control" type="text" value={total} onChange={(e) => {
-                            setTotal(e.target.value);
                         }} /></div>
 
                         <button className="btn btn-primary mt-3" onClick={enviarDatos}>

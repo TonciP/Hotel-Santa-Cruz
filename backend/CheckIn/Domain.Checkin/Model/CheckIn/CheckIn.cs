@@ -25,12 +25,19 @@ namespace Domain.Estadia.Model.CheckIn
             HabitacionId = habitacionId;
             ClienteId = clienteId;
         }
+        public void EditCheckin(Guid reservaId, Guid habitacionId, Guid clienteId)
+        {
+            ReservaId = reservaId;
+            HabitacionId = habitacionId;
+            ClienteId = clienteId;
+        }
         public void agregarCreditCard(string tipoTarjeta,string numeroTarjeta)
         {
             CreditCard = new CreditCard(tipoTarjeta, numeroTarjeta);
             var evento = new CreditCardAgregado(tipoTarjeta, numeroTarjeta);
             AddDomainEvent(evento);
         }
+        
         public void agregarHuesped(string dni)
         {
             Huesped = new Huesped(dni);

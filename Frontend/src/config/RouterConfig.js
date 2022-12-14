@@ -16,6 +16,9 @@ const RouterConfig = () => {
                 <ListaHabitacion />
             </Route>
 
+            <Route path="/habitacion/edit/:id" component={FormHabitacion}>
+            </Route>
+
             <Route path="/habitacion/create">
                 <FormHabitacion />
             </Route>
